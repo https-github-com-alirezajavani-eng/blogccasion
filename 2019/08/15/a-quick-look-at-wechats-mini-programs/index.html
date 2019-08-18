@@ -23,6 +23,7 @@
       #content,
       #header {
         width: 100%;
+        max-width: 100%;
         border: 1px dashed silver
       }
 
@@ -242,7 +243,6 @@
 
       #content {
         margin: 0;
-        text-align: justify
       }
 
       #content h2 {
@@ -258,7 +258,6 @@
       #content p {
         font-size: 1em;
         margin: .5em 0;
-        text-align: justify
       }
 
       #content img {
@@ -276,17 +275,6 @@
       #content small {
         font-size: .9em;
         padding: .5em 0
-      }
-
-      #content pre {
-        font-family: monospace;
-        color: #00f;
-        background-color: #ffa;
-        margin: 2.5em;
-        font-size: .9em;
-        white-space: pre-wrap;
-        text-overflow: ellipsis;
-        overflow-x: scroll
       }
 
       #content a {
@@ -334,6 +322,16 @@
         list-style-position: inside
       }
 
+      pre {
+        max-width: calc(100% - 1rem);
+      }
+
+      code {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
+      }
+
       amp-iframe,
       iframe {
         max-width: 533px
@@ -366,6 +364,113 @@
           layout: responsive
         }
       }
+
+      /**
+      * Dracula Theme originally by Zeno Rocha [@zenorocha]
+      * https://draculatheme.com/
+      *
+      * Ported for PrismJS by Albert Vallverdu [@byverdu]
+      */
+
+      code[class*="language-"],
+      pre[class*="language-"] {
+        color: #f8f8f2;
+        background: none;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        line-height: 1.5;
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none; }
+
+      /* Code blocks */
+      pre[class*="language-"] {
+        padding: 1em;
+        margin: .5em 0;
+        overflow: auto;
+        border-radius: 0.3em; }
+
+      :not(pre) > code[class*="language-"],
+      pre[class*="language-"] {
+        background: #282a36; }
+
+      /* Inline code */
+      :not(pre) > code[class*="language-"] {
+        padding: .1em;
+        border-radius: .3em;
+        white-space: normal; }
+
+      .token.comment,
+      .token.prolog,
+      .token.doctype,
+      .token.cdata {
+        color: #6272a4; }
+
+      .token.punctuation {
+        color: #f8f8f2; }
+
+      .namespace {
+        opacity: .7; }
+
+      .token.property,
+      .token.tag,
+      .token.constant,
+      .token.symbol,
+      .token.deleted {
+        color: #ff79c6; }
+
+      .token.boolean,
+      .token.number {
+        color: #bd93f9; }
+
+      .token.selector,
+      .token.attr-name,
+      .token.string,
+      .token.char,
+      .token.builtin,
+      .token.inserted {
+        color: #50fa7b; }
+
+      .token.operator,
+      .token.entity,
+      .token.url,
+      .language-css .token.string,
+      .style .token.string,
+      .token.variable {
+        color: #f8f8f2; }
+
+      .token.atrule,
+      .token.attr-value,
+      .token.function,
+      .token.class-name {
+        color: #f1fa8c; }
+
+      .token.keyword {
+        color: #8be9fd; }
+
+      .token.regex,
+      .token.important {
+        color: #ffb86c; }
+
+      .token.important,
+      .token.bold {
+        font-weight: bold; }
+
+      .token.italic {
+        font-style: italic; }
+
+      .token.entity {
+        cursor: help; }
+
     </style>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
@@ -389,10 +494,10 @@
             <a href="/blogccasion/tags/Technical/" class="tag">Technical</a>
           
             
-            <a href="/blogccasion/tags/France/" class="tag">France</a>
+            <a href="/blogccasion/tags/Private/" class="tag">Private</a>
           
             
-            <a href="/blogccasion/tags/Private/" class="tag">Private</a>
+            <a href="/blogccasion/tags/France/" class="tag">France</a>
           
             
             <a href="/blogccasion/tags/Work/" class="tag">Work</a>
@@ -430,8 +535,7 @@
     <a href="/blogccasion/2019/08/15/a-quick-look-at-wechats-mini-programs/"><h3>A Quick Look At WeChat&#39;s Mini Programs</h3></a>
     <div>
       <small>
-        Created on <time datetime=""></time>
-        and categorized as <a class='' href=''></a>.
+        Created on <b><time datetime="2019-08-15T11:59:52.000Z">Thu Aug 15 2019</time></b>.
       </small>
     </div>
     <div><small>Written by <b>Thomas Steiner</b>.</small></div>
@@ -447,372 +551,8 @@
 <ul>
 <li>You write your app logic with JavaScript (or TypeScript), with <code>App</code> as the top level object and <code>wx</code> as the object you get all the cool capabilities from. The <a href="https://developers.weixin.qq.com/miniprogram/en/dev/api/">API</a> is incredibly powerful.</li>
 </ul>
-<details>
-<summary>Here are the keys of the `wx` object</summary>
-<pre>
-[
-  "addCard",
-  "addNativeDownloadTask",
-  "addPhoneContact",
-  "addWeRunData",
-  "arrayBufferToBase64",
-  "authorize",
-  "base64ToArrayBuffer",
-  "batchGetContactDirectly",
-  "bindPaymentCard",
-  "calRqt",
-  "canIUse",
-  "cancelDownloadAppTask",
-  "canvasGetImageData",
-  "canvasPutImageData",
-  "canvasToTempFilePath",
-  "captureScreen",
-  "checkIsSoterEnrolledInDevice",
-  "checkIsSupportFacialRecognition",
-  "checkIsSupportSoterAuthentication",
-  "checkSession",
-  "chooseAddress",
-  "chooseContact",
-  "chooseImage",
-  "chooseInvoice",
-  "chooseInvoiceTitle",
-  "chooseLocation",
-  "chooseMedia",
-  "chooseMessageFile",
-  "chooseMultiMedia",
-  "chooseShareGroup",
-  "chooseVideo",
-  "chooseWeChatContact",
-  "clearStorage",
-  "clearStorageSync",
-  "closeBLEConnection",
-  "closeBluetoothAdapter",
-  "closeSocket",
-  "cloud",
-  "compressImage",
-  "connectSocket",
-  "connectWifi",
-  "createAnimation",
-  "createAudioContext",
-  "createBLEConnection",
-  "createCameraContext",
-  "createCanvasContext",
-  "createContext",
-  "createInnerAudioContext",
-  "createIntersectionObserver",
-  "createInterstitialAd",
-  "createLivePlayerContext",
-  "createLivePusherContext",
-  "createMapContext",
-  "createOffscreenCanvas",
-  "createRewardedVideoAd",
-  "createSelectorQuery",
-  "createUDPSocket",
-  "createVideoContext",
-  "createWorker",
-  "downloadApp",
-  "downloadAppForIOS",
-  "downloadFile",
-  "downloadSilkVoice",
-  "drawCanvas",
-  "enterContact",
-  "env",
-  "error",
-  "exitVoIPChat",
-  "faceVerifyForPay",
-  "getABTestConfig",
-  "getAccountInfoSync",
-  "getAppInstallState",
-  "getAvailableAudioSources",
-  "getBLEDeviceCharacteristics",
-  "getBLEDeviceServices",
-  "getBackgroundAudioManager",
-  "getBackgroundAudioPlayerState",
-  "getBackgroundFetchData",
-  "getBackgroundFetchToken",
-  "getBatteryInfo",
-  "getBatteryInfoSync",
-  "getBeacons",
-  "getBluetoothAdapterState",
-  "getBluetoothDevices",
-  "getClipboardData",
-  "getConnectedBluetoothDevices",
-  "getConnectedWifi",
-  "getCookies",
-  "getExtConfig",
-  "getExtConfigSync",
-  "getFileInfo",
-  "getFileSystemManager",
-  "getHCEState",
-  "getImageInfo",
-  "getLabInfo",
-  "getLaunchOptionsSync",
-  "getLocation",
-  "getLogManager",
-  "getMenuButtonBoundingClientRect",
-  "getNetworkType",
-  "getOpenDeviceId",
-  "getPublicLibVersion",
-  "getRealtimeLogManager",
-  "getRecorderManager",
-  "getResPath",
-  "getSavedFileInfo",
-  "getSavedFileList",
-  "getScreenBrightness",
-  "getSelectedTextRange",
-  "getSetting",
-  "getShareInfo",
-  "getStorage",
-  "getStorageInfo",
-  "getStorageInfoSync",
-  "getStorageSync",
-  "getSystemInfo",
-  "getSystemInfoSync",
-  "getUpdateManager",
-  "getUserInfo",
-  "getWeRunData",
-  "getWifiList",
-  "getWxSecData",
-  "hideKeyboard",
-  "hideLoading",
-  "hideNavigationBarLoading",
-  "hideShareMenu",
-  "hideTabBar",
-  "hideTabBarRedDot",
-  "hideToast",
-  "installDownloadApp",
-  "isSDKError",
-  "isSystemError",
-  "isThirdError",
-  "joinVoIPChat",
-  "launchApplicationDirectly",
-  "launchApplicationForNative",
-  "launchMiniProgram",
-  "loadFontFace",
-  "loadPaySpeechDialectConfig",
-  "login",
-  "makePhoneCall",
-  "makeVoIPCall",
-  "navigateBack",
-  "navigateBackApplication",
-  "navigateBackH5",
-  "navigateBackMiniProgram",
-  "navigateBackNative",
-  "navigateTo",
-  "navigateToDevMiniProgram",
-  "navigateToMiniProgram",
-  "navigateToMiniProgramDirectly",
-  "nextTick",
-  "notifyBLECharacteristicValueChange",
-  "notifyBLECharacteristicValueChanged",
-  "offAppHide",
-  "offAppShow",
-  "offAudioInterruptionBegin",
-  "offAudioInterruptionEnd",
-  "offError",
-  "offLocalServiceDiscoveryStop",
-  "offLocalServiceFound",
-  "offLocalServiceLost",
-  "offLocalServiceResolveFail",
-  "offPageNotFound",
-  "offWindowResize",
-  "onAccelerometerChange",
-  "onAppEnterBackground",
-  "onAppEnterForeground",
-  "onAppHide",
-  "onAppRoute",
-  "onAppRouteDone",
-  "onAppShow",
-  "onAppUnhang",
-  "onAudioInterruptionBegin",
-  "onAudioInterruptionEnd",
-  "onBLECharacteristicValueChange",
-  "onBLEConnectionStateChange",
-  "onBLEConnectionStateChanged",
-  "onBackgroundAudioPause",
-  "onBackgroundAudioPlay",
-  "onBackgroundAudioStop",
-  "onBackgroundFetchData",
-  "onBeaconServiceChange",
-  "onBeaconUpdate",
-  "onBluetoothAdapterStateChange",
-  "onBluetoothDeviceFound",
-  "onCompassChange",
-  "onDeviceMotionChange",
-  "onDownloadAppStateChange",
-  "onError",
-  "onEvaluateWifi",
-  "onGetWifiList",
-  "onGyroscopeChange",
-  "onHCEMessage",
-  "onKeyboardHeightChange",
-  "onLocalServiceDiscoveryStop",
-  "onLocalServiceFound",
-  "onLocalServiceLost",
-  "onLocalServiceResolveFail",
-  "onLocationChange",
-  "onMemoryWarning",
-  "onNativeEvent",
-  "onNetworkStatusChange",
-  "onPageNotFound",
-  "onPageReload",
-  "onSocketClose",
-  "onSocketError",
-  "onSocketMessage",
-  "onSocketOpen",
-  "onTapNavigationBarRightButton",
-  "onUploadEncryptedFileToCDNProgress",
-  "onUserCaptureScreen",
-  "onVoIPChatInterrupted",
-  "onVoIPChatMembersChanged",
-  "onVoIPChatSpeakersChanged",
-  "onVoicePlayEnd",
-  "onWebviewEvent",
-  "onWifiConnected",
-  "onWindowResize",
-  "openBluetoothAdapter",
-  "openBusinessView",
-  "openCard",
-  "openDeliveryList",
-  "openDocument",
-  "openGoldenRedPacketDetail",
-  "openLocation",
-  "openMiniProgramHistoryList",
-  "openMiniProgramProfile",
-  "openMiniProgramSearch",
-  "openMiniProgramStarList",
-  "openOfficialAccountProfile",
-  "openOfflinePayView",
-  "openQRCode",
-  "openSetting",
-  "openUrl",
-  "openUserProfile",
-  "openWCPayCardList",
-  "operateWXData",
-  "pageScrollTo",
-  "pauseBackgroundAudio",
-  "pauseDownloadAppTask",
-  "pauseVoice",
-  "playBackgroundAudio",
-  "playVoice",
-  "presetWifiList",
-  "preventApplePayUI",
-  "previewImage",
-  "queryDownloadAppTask",
-  "reLaunch",
-  "readBLECharacteristicValue",
-  "redirectTo",
-  "removeSavedFile",
-  "removeStorage",
-  "removeStorageSync",
-  "removeTabBarBadge",
-  "removeUserCloudStorage",
-  "reportAction",
-  "reportAnalytics",
-  "reportIDKey",
-  "reportKeyValue",
-  "reportMonitor",
-  "request",
-  "requestMallPayment",
-  "requestPayment",
-  "requestPaymentToBank",
-  "requestVirtualPayment",
-  "resumeDownloadAppTask",
-  "saveFile",
-  "saveImageToPhotosAlbum",
-  "saveVideoToPhotosAlbum",
-  "scanCode",
-  "secureTunnel",
-  "seekBackgroundAudio",
-  "sendBizRedPacket",
-  "sendGoldenRedPacket",
-  "sendHCEMessage",
-  "sendSocketMessage",
-  "setBackgroundColor",
-  "setBackgroundFetchToken",
-  "setBackgroundTextStyle",
-  "setClipboardData",
-  "setCookies",
-  "setCurrentPaySpeech",
-  "setEnableDebug",
-  "setInnerAudioOption",
-  "setKeepScreenOn",
-  "setLabInfo",
-  "setNavigationBarAlpha",
-  "setNavigationBarColor",
-  "setNavigationBarRightButton",
-  "setNavigationBarTitle",
-  "setPageStyle",
-  "setResPath",
-  "setScreenBrightness",
-  "setStorage",
-  "setStorageSync",
-  "setTabBarBadge",
-  "setTabBarItem",
-  "setTabBarStyle",
-  "setTopBarText",
-  "setUserCloudStorage",
-  "setWifiList",
-  "shareAppMessageForFakeNative",
-  "showActionSheet",
-  "showLoading",
-  "showModal",
-  "showNavigationBarLoading",
-  "showShareActionSheet",
-  "showShareMenu",
-  "showTabBar",
-  "showTabBarRedDot",
-  "showToast",
-  "startAccelerometer",
-  "startBeaconDiscovery",
-  "startBluetoothDevicesDiscovery",
-  "startCompass",
-  "startCustomFacialRecognitionVerify",
-  "startCustomFacialRecognitionVerifyAndUploadVideo",
-  "startDeviceMotionListening",
-  "startFacialRecognitionVerify",
-  "startFacialRecognitionVerifyAndUploadVideo",
-  "startGyroscope",
-  "startHCE",
-  "startLocalServiceDiscovery",
-  "startLocationUpdate",
-  "startLocationUpdateBackground",
-  "startPullDownRefresh",
-  "startRecord",
-  "startSoterAuthentication",
-  "startWifi",
-  "stopAccelerometer",
-  "stopBackgroundAudio",
-  "stopBeaconDiscovery",
-  "stopBluetoothDevicesDiscovery",
-  "stopCompass",
-  "stopDeviceMotionListening",
-  "stopGyroscope",
-  "stopHCE",
-  "stopLocalServiceDiscovery",
-  "stopLocationUpdate",
-  "stopPullDownRefresh",
-  "stopRecord",
-  "stopVoice",
-  "stopWifi",
-  "switchTab",
-  "traceEvent",
-  "triggerGettingWidgetData",
-  "updatePerfData",
-  "updateShareMenu",
-  "updateVoIPChatMuteConfig",
-  "uploadEncryptedFileToCDN",
-  "uploadFile",
-  "uploadSilkVoice",
-  "uploadWeRunData",
-  "verifyPaymentPassword",
-  "version",
-  "vibrateLong",
-  "vibrateShort",
-  "voiceSplitJoint",
-  "writeBLECharacteristicValue"
-]</pre>
-</details>
+<p>Here are the keys of the <code>wx</code> object:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token punctuation">[</span></span><br><span class="highlight-line">  <span class="token string">"addCard"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"addNativeDownloadTask"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"addPhoneContact"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"addWeRunData"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"arrayBufferToBase64"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"authorize"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"base64ToArrayBuffer"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"batchGetContactDirectly"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"bindPaymentCard"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"calRqt"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"canIUse"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"cancelDownloadAppTask"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"canvasGetImageData"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"canvasPutImageData"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"canvasToTempFilePath"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"captureScreen"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"checkIsSoterEnrolledInDevice"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"checkIsSupportFacialRecognition"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"checkIsSupportSoterAuthentication"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"checkSession"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"chooseAddress"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"chooseContact"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"chooseImage"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"chooseInvoice"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"chooseInvoiceTitle"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"chooseLocation"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"chooseMedia"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"chooseMessageFile"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"chooseMultiMedia"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"chooseShareGroup"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"chooseVideo"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"chooseWeChatContact"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"clearStorage"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"clearStorageSync"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"closeBLEConnection"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"closeBluetoothAdapter"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"closeSocket"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"cloud"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"compressImage"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"connectSocket"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"connectWifi"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"createAnimation"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"createAudioContext"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"createBLEConnection"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"createCameraContext"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"createCanvasContext"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"createContext"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"createInnerAudioContext"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"createIntersectionObserver"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"createInterstitialAd"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"createLivePlayerContext"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"createLivePusherContext"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"createMapContext"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"createOffscreenCanvas"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"createRewardedVideoAd"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"createSelectorQuery"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"createUDPSocket"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"createVideoContext"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"createWorker"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"downloadApp"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"downloadAppForIOS"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"downloadFile"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"downloadSilkVoice"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"drawCanvas"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"enterContact"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"env"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"error"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"exitVoIPChat"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"faceVerifyForPay"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getABTestConfig"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getAccountInfoSync"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getAppInstallState"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getAvailableAudioSources"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getBLEDeviceCharacteristics"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getBLEDeviceServices"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getBackgroundAudioManager"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getBackgroundAudioPlayerState"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getBackgroundFetchData"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getBackgroundFetchToken"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getBatteryInfo"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getBatteryInfoSync"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getBeacons"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getBluetoothAdapterState"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getBluetoothDevices"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getClipboardData"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getConnectedBluetoothDevices"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getConnectedWifi"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getCookies"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getExtConfig"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getExtConfigSync"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getFileInfo"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getFileSystemManager"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getHCEState"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getImageInfo"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getLabInfo"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getLaunchOptionsSync"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getLocation"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getLogManager"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getMenuButtonBoundingClientRect"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getNetworkType"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getOpenDeviceId"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getPublicLibVersion"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getRealtimeLogManager"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getRecorderManager"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getResPath"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getSavedFileInfo"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getSavedFileList"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getScreenBrightness"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getSelectedTextRange"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getSetting"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getShareInfo"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getStorage"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getStorageInfo"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getStorageInfoSync"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getStorageSync"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getSystemInfo"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getSystemInfoSync"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getUpdateManager"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getUserInfo"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getWeRunData"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getWifiList"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"getWxSecData"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"hideKeyboard"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"hideLoading"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"hideNavigationBarLoading"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"hideShareMenu"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"hideTabBar"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"hideTabBarRedDot"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"hideToast"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"installDownloadApp"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"isSDKError"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"isSystemError"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"isThirdError"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"joinVoIPChat"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"launchApplicationDirectly"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"launchApplicationForNative"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"launchMiniProgram"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"loadFontFace"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"loadPaySpeechDialectConfig"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"login"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"makePhoneCall"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"makeVoIPCall"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"navigateBack"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"navigateBackApplication"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"navigateBackH5"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"navigateBackMiniProgram"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"navigateBackNative"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"navigateTo"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"navigateToDevMiniProgram"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"navigateToMiniProgram"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"navigateToMiniProgramDirectly"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"nextTick"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"notifyBLECharacteristicValueChange"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"notifyBLECharacteristicValueChanged"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"offAppHide"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"offAppShow"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"offAudioInterruptionBegin"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"offAudioInterruptionEnd"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"offError"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"offLocalServiceDiscoveryStop"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"offLocalServiceFound"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"offLocalServiceLost"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"offLocalServiceResolveFail"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"offPageNotFound"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"offWindowResize"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onAccelerometerChange"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onAppEnterBackground"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onAppEnterForeground"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onAppHide"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onAppRoute"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onAppRouteDone"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onAppShow"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onAppUnhang"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onAudioInterruptionBegin"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onAudioInterruptionEnd"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onBLECharacteristicValueChange"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onBLEConnectionStateChange"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onBLEConnectionStateChanged"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onBackgroundAudioPause"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onBackgroundAudioPlay"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onBackgroundAudioStop"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onBackgroundFetchData"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onBeaconServiceChange"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onBeaconUpdate"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onBluetoothAdapterStateChange"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onBluetoothDeviceFound"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onCompassChange"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onDeviceMotionChange"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onDownloadAppStateChange"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onError"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onEvaluateWifi"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onGetWifiList"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onGyroscopeChange"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onHCEMessage"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onKeyboardHeightChange"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onLocalServiceDiscoveryStop"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onLocalServiceFound"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onLocalServiceLost"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onLocalServiceResolveFail"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onLocationChange"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onMemoryWarning"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onNativeEvent"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onNetworkStatusChange"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onPageNotFound"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onPageReload"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onSocketClose"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onSocketError"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onSocketMessage"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onSocketOpen"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onTapNavigationBarRightButton"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onUploadEncryptedFileToCDNProgress"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onUserCaptureScreen"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onVoIPChatInterrupted"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onVoIPChatMembersChanged"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onVoIPChatSpeakersChanged"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onVoicePlayEnd"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onWebviewEvent"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onWifiConnected"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"onWindowResize"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"openBluetoothAdapter"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"openBusinessView"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"openCard"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"openDeliveryList"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"openDocument"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"openGoldenRedPacketDetail"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"openLocation"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"openMiniProgramHistoryList"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"openMiniProgramProfile"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"openMiniProgramSearch"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"openMiniProgramStarList"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"openOfficialAccountProfile"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"openOfflinePayView"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"openQRCode"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"openSetting"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"openUrl"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"openUserProfile"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"openWCPayCardList"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"operateWXData"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"pageScrollTo"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"pauseBackgroundAudio"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"pauseDownloadAppTask"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"pauseVoice"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"playBackgroundAudio"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"playVoice"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"presetWifiList"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"preventApplePayUI"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"previewImage"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"queryDownloadAppTask"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"reLaunch"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"readBLECharacteristicValue"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"redirectTo"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"removeSavedFile"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"removeStorage"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"removeStorageSync"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"removeTabBarBadge"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"removeUserCloudStorage"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"reportAction"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"reportAnalytics"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"reportIDKey"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"reportKeyValue"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"reportMonitor"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"request"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"requestMallPayment"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"requestPayment"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"requestPaymentToBank"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"requestVirtualPayment"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"resumeDownloadAppTask"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"saveFile"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"saveImageToPhotosAlbum"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"saveVideoToPhotosAlbum"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"scanCode"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"secureTunnel"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"seekBackgroundAudio"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"sendBizRedPacket"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"sendGoldenRedPacket"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"sendHCEMessage"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"sendSocketMessage"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"setBackgroundColor"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"setBackgroundFetchToken"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"setBackgroundTextStyle"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"setClipboardData"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"setCookies"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"setCurrentPaySpeech"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"setEnableDebug"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"setInnerAudioOption"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"setKeepScreenOn"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"setLabInfo"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"setNavigationBarAlpha"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"setNavigationBarColor"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"setNavigationBarRightButton"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"setNavigationBarTitle"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"setPageStyle"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"setResPath"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"setScreenBrightness"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"setStorage"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"setStorageSync"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"setTabBarBadge"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"setTabBarItem"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"setTabBarStyle"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"setTopBarText"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"setUserCloudStorage"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"setWifiList"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"shareAppMessageForFakeNative"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"showActionSheet"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"showLoading"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"showModal"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"showNavigationBarLoading"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"showShareActionSheet"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"showShareMenu"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"showTabBar"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"showTabBarRedDot"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"showToast"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"startAccelerometer"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"startBeaconDiscovery"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"startBluetoothDevicesDiscovery"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"startCompass"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"startCustomFacialRecognitionVerify"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"startCustomFacialRecognitionVerifyAndUploadVideo"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"startDeviceMotionListening"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"startFacialRecognitionVerify"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"startFacialRecognitionVerifyAndUploadVideo"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"startGyroscope"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"startHCE"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"startLocalServiceDiscovery"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"startLocationUpdate"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"startLocationUpdateBackground"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"startPullDownRefresh"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"startRecord"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"startSoterAuthentication"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"startWifi"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"stopAccelerometer"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"stopBackgroundAudio"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"stopBeaconDiscovery"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"stopBluetoothDevicesDiscovery"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"stopCompass"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"stopDeviceMotionListening"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"stopGyroscope"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"stopHCE"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"stopLocalServiceDiscovery"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"stopLocationUpdate"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"stopPullDownRefresh"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"stopRecord"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"stopVoice"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"stopWifi"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"switchTab"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"traceEvent"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"triggerGettingWidgetData"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"updatePerfData"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"updateShareMenu"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"updateVoIPChatMuteConfig"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"uploadEncryptedFileToCDN"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"uploadFile"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"uploadSilkVoice"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"uploadWeRunData"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"verifyPaymentPassword"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"version"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"vibrateLong"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"vibrateShort"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"voiceSplitJoint"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token string">"writeBLECharacteristicValue"</span></span><br><span class="highlight-line"><span class="token punctuation">]</span></span></code></pre>
 <ul>
 <li>You describe your interface with <a href="https://developers.weixin.qq.com/miniprogram/en/dev/framework/view/wxml/">WXML</a>, which is something between <a href="https://reactjs.org/docs/introducing-jsx.html">JSX</a>, <a href="https://vuejs.org/v2/guide/#Declarative-Rendering">Vue's declarative rendering</a>; it also reminds me of old concepts like XSLT's <a href="https://www.w3.org/TR/xslt-30/#xsl-if"><code>&lt;xsl:if&gt;</code></a>:</li>
 </ul>
@@ -845,7 +585,7 @@ When you look at the SDK's package contents, they make no real effort at hiding 
         <ul>
           <li>© 2005–2019 <a href="./">Thomas Steiner</a></li>
           <li>Distributed under <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></li>
-          <li>Contact and required <a href="./2005/10/21/thomas-steiners-contact-data-180510">legal info</a></li>
+          <li>Contact and required <a href="/about/">legal info</a></li>
           <li><small>This website uses Google Analytics</small></li>
         </ul>
         <amp-analytics type="googleanalytics">

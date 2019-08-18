@@ -23,6 +23,7 @@
       #content,
       #header {
         width: 100%;
+        max-width: 100%;
         border: 1px dashed silver
       }
 
@@ -242,7 +243,6 @@
 
       #content {
         margin: 0;
-        text-align: justify
       }
 
       #content h2 {
@@ -258,7 +258,6 @@
       #content p {
         font-size: 1em;
         margin: .5em 0;
-        text-align: justify
       }
 
       #content img {
@@ -276,17 +275,6 @@
       #content small {
         font-size: .9em;
         padding: .5em 0
-      }
-
-      #content pre {
-        font-family: monospace;
-        color: #00f;
-        background-color: #ffa;
-        margin: 2.5em;
-        font-size: .9em;
-        white-space: pre-wrap;
-        text-overflow: ellipsis;
-        overflow-x: scroll
       }
 
       #content a {
@@ -334,6 +322,16 @@
         list-style-position: inside
       }
 
+      pre {
+        max-width: calc(100% - 1rem);
+      }
+
+      code {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
+      }
+
       amp-iframe,
       iframe {
         max-width: 533px
@@ -366,6 +364,113 @@
           layout: responsive
         }
       }
+
+      /**
+      * Dracula Theme originally by Zeno Rocha [@zenorocha]
+      * https://draculatheme.com/
+      *
+      * Ported for PrismJS by Albert Vallverdu [@byverdu]
+      */
+
+      code[class*="language-"],
+      pre[class*="language-"] {
+        color: #f8f8f2;
+        background: none;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        line-height: 1.5;
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none; }
+
+      /* Code blocks */
+      pre[class*="language-"] {
+        padding: 1em;
+        margin: .5em 0;
+        overflow: auto;
+        border-radius: 0.3em; }
+
+      :not(pre) > code[class*="language-"],
+      pre[class*="language-"] {
+        background: #282a36; }
+
+      /* Inline code */
+      :not(pre) > code[class*="language-"] {
+        padding: .1em;
+        border-radius: .3em;
+        white-space: normal; }
+
+      .token.comment,
+      .token.prolog,
+      .token.doctype,
+      .token.cdata {
+        color: #6272a4; }
+
+      .token.punctuation {
+        color: #f8f8f2; }
+
+      .namespace {
+        opacity: .7; }
+
+      .token.property,
+      .token.tag,
+      .token.constant,
+      .token.symbol,
+      .token.deleted {
+        color: #ff79c6; }
+
+      .token.boolean,
+      .token.number {
+        color: #bd93f9; }
+
+      .token.selector,
+      .token.attr-name,
+      .token.string,
+      .token.char,
+      .token.builtin,
+      .token.inserted {
+        color: #50fa7b; }
+
+      .token.operator,
+      .token.entity,
+      .token.url,
+      .language-css .token.string,
+      .style .token.string,
+      .token.variable {
+        color: #f8f8f2; }
+
+      .token.atrule,
+      .token.attr-value,
+      .token.function,
+      .token.class-name {
+        color: #f1fa8c; }
+
+      .token.keyword {
+        color: #8be9fd; }
+
+      .token.regex,
+      .token.important {
+        color: #ffb86c; }
+
+      .token.important,
+      .token.bold {
+        font-weight: bold; }
+
+      .token.italic {
+        font-style: italic; }
+
+      .token.entity {
+        cursor: help; }
+
     </style>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
@@ -389,10 +494,10 @@
             <a href="/blogccasion/tags/Technical/" class="tag">Technical</a>
           
             
-            <a href="/blogccasion/tags/France/" class="tag">France</a>
+            <a href="/blogccasion/tags/Private/" class="tag">Private</a>
           
             
-            <a href="/blogccasion/tags/Private/" class="tag">Private</a>
+            <a href="/blogccasion/tags/France/" class="tag">France</a>
           
             
             <a href="/blogccasion/tags/Work/" class="tag">Work</a>
@@ -431,7 +536,7 @@
 </p>
 
 
-<ol reversed class="postlist" style="counter-reset: start-from 186">
+<ol reversed class="postlist" style="counter-reset: start-from 179">
 
   <li class="postlist-item">
     <a href="/blogccasion/2019/08/15/a-quick-look-at-wechats-mini-programs/" class="postlist-link">A Quick Look At WeChat&#39;s Mini Programs</a>
@@ -441,83 +546,73 @@
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/posts/re-colorization-for-dark-mode/" class="postlist-link">Re-Colorization for Dark Mode</a>
+    <a href="/blogccasion/2019/05/28/re-colorization-for-dark-mode/" class="postlist-link">Re-Colorization for Dark Mode</a>
     <time class="postlist-date" datetime="2019-05-28">28 May 2019</time>
     
+      <a href="/blogccasion/tags/Technical/" class="tag">Technical</a>
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/posts/let-there-be-darkness!-maybe.../" class="postlist-link">Let there be darkness! 🌚 Maybe…</a>
+    <a href="/blogccasion/2019/04/04/let-there-be-darkness-maybe/" class="postlist-link">Let there be darkness! 🌚 Maybe…</a>
     <time class="postlist-date" datetime="2019-04-04">04 Apr 2019</time>
     
+      <a href="/blogccasion/tags/Technical/" class="tag">Technical</a>
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/posts/what-does-dark-mode&#39;s-&quot;color-scheme&quot;-actually-do/" class="postlist-link">What Does Dark Mode’s “color-scheme” Actually Do? 🤔</a>
+    <a href="/blogccasion/2019/04/03/what-does-dark-modes-color-scheme-actually-do/" class="postlist-link">What Does Dark Mode’s “color-scheme” Actually Do? 🤔</a>
     <time class="postlist-date" datetime="2019-04-03">03 Apr 2019</time>
     
+      <a href="/blogccasion/tags/Technical/" class="tag">Technical</a>
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/posts/two-http-headers-related-to-service-workers-you-never-may-have-heard-of/" class="postlist-link">Two HTTP headers related to Service Workers you never may have heard of</a>
+    <a href="/blogccasion/2019/03/22/two-http-headers-related-to-service-workers-you-never-may-have-heard-of/" class="postlist-link">Two HTTP headers related to Service Workers you never may have heard of</a>
     <time class="postlist-date" datetime="2019-03-22">22 Mar 2019</time>
     
+      <a href="/blogccasion/tags/Technical/" class="tag">Technical</a>
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/posts/engaging-in-web-standardsthe-&quot;compatible-with-most-web-developers&quot;-approach/" class="postlist-link">Engaging in Web Standards—The “Compatible with Most Web Developers” Approach</a>
+    <a href="/blogccasion/2019/02/05/engaging-in-web-standards-the-compatible-with-most-web-developers-approach/" class="postlist-link">Engaging in Web Standards—The “Compatible with Most Web Developers” Approach</a>
     <time class="postlist-date" datetime="2019-02-05">05 Feb 2019</time>
     
+      <a href="/blogccasion/tags/Technical/" class="tag">Technical</a>
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/posts/progressive-web-app-progress-in-ios-12.2-beta-1-(build-16e5181f)/" class="postlist-link">Progressive Web App Progress in iOS 12.2 Beta 1 (Build 16E5181f)</a>
+    <a href="/blogccasion/2019/01/28/progressive-web-app-progress-in-ios-12.2-beta-1-build-16e5181f/" class="postlist-link">Progressive Web App Progress in iOS 12.2 Beta 1 (Build 16E5181f)</a>
     <time class="postlist-date" datetime="2019-01-28">28 Jan 2019</time>
     
+      <a href="/blogccasion/tags/Technical/" class="tag">Technical</a>
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/posts/experimenting-with-the-wake-lock-api/" class="postlist-link">Experimenting with the Wake Lock API</a>
+    <a href="/blogccasion/2018/12/18/experimenting-with-the-wake-lock-api/" class="postlist-link">Experimenting with the Wake Lock API</a>
     <time class="postlist-date" datetime="2018-12-18">18 Dec 2018</time>
     
+      <a href="/blogccasion/tags/Technical/" class="tag">Technical</a>
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/posts/why-browsers-download-stylesheets-with-non-matching-media-queries/" class="postlist-link">Why Browsers Download Stylesheets With Non-Matching Media Queries</a>
-    <time class="postlist-date" datetime="2018-12-12">12 Dec 2018</time>
-    
-  </li>
-
-  <li class="postlist-item">
-    <a href="/blogccasion/posts/why-build-progressive-web-apps:-if-it&#39;s-just-a-bookmark-it&#39;s-not-a-pwa!video-write-up/" class="postlist-link">Why Build Progressive Web Apps: If It’s Just a Bookmark, It’s not a PWA!—Video Write-Up</a>
+    <a href="/blogccasion/2018/12/11/why-build-progressive-web-apps-if-its-just-a-bookmark-its-not-a-pwa-video-write-up/" class="postlist-link">Why Build Progressive Web Apps: If It’s Just a Bookmark, It’s not a PWA!—Video Write-Up</a>
     <time class="postlist-date" datetime="2018-12-11">11 Dec 2018</time>
     
-  </li>
-
-  <li class="postlist-item">
-    <a href="/blogccasion/2018/12/05/why-build-progressive-web-apps-push-but-don-t-be-pushy-video-write-up-094452/" class="postlist-link">Why Build Progressive Web Apps: Push, but Don&#39;t be Pushy!? (Video Write-Up)</a>
-    <time class="postlist-date" datetime="2018-12-05">05 Dec 2018</time>
-    
       <a href="/blogccasion/tags/Technical/" class="tag">Technical</a>
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/posts/why-build-progressive-web-apps:-push-but-don&#39;t-be-pushy!-video-write-up/" class="postlist-link">Why Build Progressive Web Apps: Push, but Don’t be Pushy! — Video Write-Up</a>
+    <a href="/blogccasion/2018/12/04/why-build-progressive-web-apps-push-but-dont-be-pushy-video-write-up/" class="postlist-link">Why Build Progressive Web Apps: Push, but Don’t be Pushy! — Video Write-Up</a>
     <time class="postlist-date" datetime="2018-12-04">04 Dec 2018</time>
     
-  </li>
-
-  <li class="postlist-item">
-    <a href="/blogccasion/2018/12/03/why-build-progressive-web-apps-never-lose-a-click-out-video-write-up-160228/" class="postlist-link">Why Build Progressive Web Apps: Never Lose a Click-Out! (Video Write-Up)</a>
-    <time class="postlist-date" datetime="2018-12-03">03 Dec 2018</time>
-    
       <a href="/blogccasion/tags/Technical/" class="tag">Technical</a>
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/posts/why-build-progressive-web-apps:-never-lose-a-click-out!video-write-up/" class="postlist-link">Why Build Progressive Web Apps: Never Lose a Click-Out!—Video Write-Up</a>
+    <a href="/blogccasion/2018/12/03/why-build-progressive-web-apps-never-lose-a-click-out-video-write-up/" class="postlist-link">Why Build Progressive Web Apps: Never Lose a Click-Out!—Video Write-Up</a>
     <time class="postlist-date" datetime="2018-12-03">03 Dec 2018</time>
     
+      <a href="/blogccasion/tags/Technical/" class="tag">Technical</a>
   </li>
 
   <li class="postlist-item">
@@ -535,22 +630,10 @@
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/posts/new-top-level-http-archive-report-on-progressive-web-apps/" class="postlist-link">New top-level HTTP Archive Report on Progressive Web Apps</a>
-    <time class="postlist-date" datetime="2018-08-30">30 Aug 2018</time>
-    
-  </li>
-
-  <li class="postlist-item">
     <a href="/blogccasion/2018/08/22/service-worker-caching-strategies-based-on-request-types-114542/" class="postlist-link">Service Worker Caching Strategies Based on Request Types</a>
     <time class="postlist-date" datetime="2018-08-22">22 Aug 2018</time>
     
       <a href="/blogccasion/tags/Technical/" class="tag">Technical</a>
-  </li>
-
-  <li class="postlist-item">
-    <a href="/blogccasion/posts/service-worker-caching-strategies-based-on-request-types/" class="postlist-link">Service Worker Caching Strategies Based on Request Types</a>
-    <time class="postlist-date" datetime="2018-08-20">20 Aug 2018</time>
-    
   </li>
 
   <li class="postlist-item">
@@ -568,12 +651,6 @@
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/posts/progressive-web-apps-in-the-http-archive/" class="postlist-link">Progressive Web Apps in the HTTP Archive</a>
-    <time class="postlist-date" datetime="2018-07-09">09 Jul 2018</time>
-    
-  </li>
-
-  <li class="postlist-item">
     <a href="/blogccasion/2018/06/25/linux-on-a-mid-2007-imac-093225/" class="postlist-link">Linux on a Mid 2007 iMac</a>
     <time class="postlist-date" datetime="2018-06-25">25 Jun 2018</time>
     
@@ -581,7 +658,7 @@
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/2018/04/08/amp-cache-adding-an-external-css-style-sheet-130437/" class="postlist-link">AMP cache adding an external css style sheet?</a>
+    <a href="/blogccasion/2018/04/08/amp-cache-adding-an-external-css-style-sheet-130437/" class="postlist-link">AMP cache adding an external CSS style sheet?</a>
     <time class="postlist-date" datetime="2018-04-08">08 Apr 2018</time>
     
       <a href="/blogccasion/tags/Technical/" class="tag">Technical</a>
@@ -875,7 +952,7 @@
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/2010/01/22/nachmieter-gesucht-f-r-3-zimmer-wohnung-in-der-gryphiusstr-1-hamburg-winterhude-update-wohnung-vergeben-143351/" class="postlist-link">Nachmieter gesucht f?r 3-Zimmer-Wohnung in der Gryphiusstr. 1, Hamburg Winterhude (Update: Wohnung vergeben)</a>
+    <a href="/blogccasion/2010/01/22/nachmieter-gesucht-fuer-3-zimmer-wohnung-in-der-gryphiusstr-1-hamburg-winterhude-update-wohnung-vergeben-143351/" class="postlist-link">Nachmieter gesucht f?r 3-Zimmer-Wohnung in der Gryphiusstr. 1, Hamburg Winterhude (Update: Wohnung vergeben)</a>
     <time class="postlist-date" datetime="2010-01-22">22 Jan 2010</time>
     
       <a href="/blogccasion/tags/Private/" class="tag">Private</a>
@@ -966,7 +1043,7 @@
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/2009/03/03/recap-of-today-s-events-194225/" class="postlist-link">Recap of today&#39;s events</a>
+    <a href="/blogccasion/2009/03/03/recap-of-todays-events-194225/" class="postlist-link">Recap of today&#39;s events</a>
     <time class="postlist-date" datetime="2009-03-03">03 Mar 2009</time>
     
       <a href="/blogccasion/tags/Private/" class="tag">Private</a>
@@ -1008,7 +1085,7 @@
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/2009/03/02/it-s-a-052847/" class="postlist-link">It&#39;s a...</a>
+    <a href="/blogccasion/2009/03/02/its-a-052847/" class="postlist-link">It&#39;s a...</a>
     <time class="postlist-date" datetime="2009-03-02">02 Mar 2009</time>
     
       <a href="/blogccasion/tags/Private/" class="tag">Private</a>
@@ -1057,7 +1134,7 @@
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/2008/12/02/die-zeit-erkl-rt-die-finanzkrise-f-r-normalsterbliche-german-214415/" class="postlist-link">DIE ZEIT erkl?rt die Finanzkrise f?r Normalsterbliche (German)</a>
+    <a href="/blogccasion/2008/12/02/die-zeit-erklaert-die-finanzkrise-fuer-normalsterbliche-german-214415/" class="postlist-link">DIE ZEIT erkl?rt die Finanzkrise f?r Normalsterbliche (German)</a>
     <time class="postlist-date" datetime="2008-12-02">02 Dec 2008</time>
     
       <a href="/blogccasion/tags/Political/" class="tag">Political</a>
@@ -1127,14 +1204,14 @@
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/2008/03/13/did-you-think-that-you-were-dreaming-sometimes-i-don-t-know-014349/" class="postlist-link">Did you think that you were dreaming? - Sometimes I don&#39;t know...</a>
+    <a href="/blogccasion/2008/03/13/did-you-think-that-you-were-dreaming-sometimes-i-dont-know-014349/" class="postlist-link">Did you think that you were dreaming? - Sometimes I don&#39;t know...</a>
     <time class="postlist-date" datetime="2008-03-13">13 Mar 2008</time>
     
       <a href="/blogccasion/tags/Private/" class="tag">Private</a>
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/2008/03/13/l-wenzahn-parodie-wie-man-auch-ohne-die-b-rse-reich-wird-005806/" class="postlist-link">L?wenzahn-Parodie - Wie man auch ohne die B?rse reich wird</a>
+    <a href="/blogccasion/2008/03/13/loewenzahn-parodie-wie-man-auch-ohne-die-boerse-reich-wird-005806/" class="postlist-link">L?wenzahn-Parodie - Wie man auch ohne die B?rse reich wird</a>
     <time class="postlist-date" datetime="2008-03-13">13 Mar 2008</time>
     
       <a href="/blogccasion/tags/Private/" class="tag">Private</a>
@@ -1330,7 +1407,7 @@
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/2007/01/31/political-will-is-also-a-renewable-ressource-in-germany-012822/" class="postlist-link">Political will is also a renewable ressource in Germany</a>
+    <a href="/blogccasion/2007/01/31/political-will-is-also-a-renewable-resource-in-germany-012822/" class="postlist-link">Political will is also a renewable resource in Germany</a>
     <time class="postlist-date" datetime="2007-01-31">31 Jan 2007</time>
     
       <a href="/blogccasion/tags/Political/" class="tag">Political</a>
@@ -1351,7 +1428,7 @@
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/2006/12/22/proxima-estaci-n-esperanza-023144/" class="postlist-link">Proxima Estaci?n: Esperanza</a>
+    <a href="/blogccasion/2006/12/22/proxima-estacion-esperanza-023144/" class="postlist-link">Proxima Estación: Esperanza</a>
     <time class="postlist-date" datetime="2006-12-22">22 Dec 2006</time>
     
       <a href="/blogccasion/tags/Private/" class="tag">Private</a>
@@ -1400,7 +1477,7 @@
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/2006/09/27/ber-das-sch-ngerede-von-voip-181035/" class="postlist-link">?ber das Sch?ngerede von VoIP</a>
+    <a href="/blogccasion/2006/09/27/ueber-das-schoengerede-von-voip-181035/" class="postlist-link">Über das Schöngerede von VoIP</a>
     <time class="postlist-date" datetime="2006-09-27">27 Sep 2006</time>
     
       <a href="/blogccasion/tags/Technical/" class="tag">Technical</a>
@@ -1435,7 +1512,7 @@
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/2006/07/16/spam-ist-nicht-sooo-bel-053627/" class="postlist-link">Spam ist nicht sooo ?bel</a>
+    <a href="/blogccasion/2006/07/16/spam-ist-nicht-sooo-uebel-053627/" class="postlist-link">Spam ist nicht sooo übel</a>
     <time class="postlist-date" datetime="2006-07-16">16 Jul 2006</time>
     
       <a href="/blogccasion/tags/Private/" class="tag">Private</a>
@@ -1498,7 +1575,7 @@
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/2006/04/24/kurioses-rund-ums-j1-visum-f-r-die-einreise-in-die-usa-153641/" class="postlist-link">Kurioses rund ums J1 Visum f?r die Einreise in die USA</a>
+    <a href="/blogccasion/2006/04/24/kurioses-rund-ums-j1-visum-fuer-die-einreise-in-die-usa-153641/" class="postlist-link">Kurioses rund ums J1 Visum für die Einreise in die USA</a>
     <time class="postlist-date" datetime="2006-04-24">24 Apr 2006</time>
     
       <a href="/blogccasion/tags/Private/" class="tag">Private</a>
@@ -1547,7 +1624,7 @@
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/2006/02/05/updating-my-cv-amerikanischer-musterlebenslauf-mod-le-de-cv-am-ricain-134102/" class="postlist-link">Updating my CV, amerikanischer Musterlebenslauf, mod?le de CV am?ricain</a>
+    <a href="/blogccasion/2006/02/05/updating-my-cv-amerikanischer-musterlebenslauf-modele-de-cv-americain-134102/" class="postlist-link">Updating my CV, amerikanischer Musterlebenslauf, modèle de CV américain</a>
     <time class="postlist-date" datetime="2006-02-05">05 Feb 2006</time>
     
       <a href="/blogccasion/tags/Private/" class="tag">Private</a>
@@ -1582,7 +1659,7 @@
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/2005/12/04/drogu-de-la-poudreuse-skiing-at-les-deux-alpes-125110/" class="postlist-link">Drogu? de la poudreuse - Skiing at Les Deux Alpes</a>
+    <a href="/blogccasion/2005/12/04/drogue-de-la-poudreuse-skiing-at-les-deux-alpes-125110/" class="postlist-link">Drogu? de la poudreuse - Skiing at Les Deux Alpes</a>
     <time class="postlist-date" datetime="2005-12-04">04 Dec 2005</time>
     
       <a href="/blogccasion/tags/France/" class="tag">France</a>
@@ -1610,21 +1687,21 @@
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/2005/11/14/la-france-en-tat-d-urgence-004118/" class="postlist-link">La France en ?tat d&#39;urgence</a>
+    <a href="/blogccasion/2005/11/14/la-france-en-etat-durgence-004118/" class="postlist-link">La France en état d&#39;urgence</a>
     <time class="postlist-date" datetime="2005-11-14">14 Nov 2005</time>
     
       <a href="/blogccasion/tags/Political/" class="tag">Political</a>
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/2005/11/09/verlan-für-erfängan-und-fipros-213708/" class="postlist-link">Verlan für Erfängan und Fipros</a>
+    <a href="/blogccasion/2005/11/09/verlan-fuer-erfaengan-und-fipros-213708/" class="postlist-link">Verlan für Erfängan und Fipros</a>
     <time class="postlist-date" datetime="2005-11-09">09 Nov 2005</time>
     
       <a href="/blogccasion/tags/France/" class="tag">France</a>
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/2005/11/08/des-meutes-en-france-arrivent-un-nouveau-niveau-025713/" class="postlist-link">Des ?meutes en France arrivent ? un nouveau niveau</a>
+    <a href="/blogccasion/2005/11/08/des-emeutes-en-france-arrivent-a-un-nouveau-niveau-025713/" class="postlist-link">Des émeutes en France arrivent à un nouveau niveau</a>
     <time class="postlist-date" datetime="2005-11-08">08 Nov 2005</time>
     
       <a href="/blogccasion/tags/Political/" class="tag">Political</a>
@@ -1645,21 +1722,21 @@
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/2005/11/03/some-thoughts-about-apple-s-ipod-4g-005925/" class="postlist-link">Some thoughts about Apple&#39;s iPod 4G</a>
+    <a href="/blogccasion/2005/11/03/some-thoughts-about-apples-ipod-4g-005925/" class="postlist-link">Some thoughts about Apple&#39;s iPod 4G</a>
     <time class="postlist-date" datetime="2005-11-03">03 Nov 2005</time>
     
       <a href="/blogccasion/tags/Technical/" class="tag">Technical</a>
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/2005/10/26/zimmer-mit-bergblick-in-gastlicher-atmosph-re-130612/" class="postlist-link">Zimmer mit Bergblick in gastlicher Atmosphäre</a>
+    <a href="/blogccasion/2005/10/26/zimmer-mit-bergblick-in-gastlicher-atmosphaere-130612/" class="postlist-link">Zimmer mit Bergblick in gastlicher Atmosphäre</a>
     <time class="postlist-date" datetime="2005-10-26">26 Oct 2005</time>
     
       <a href="/blogccasion/tags/Private/" class="tag">Private</a>
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/2005/10/25/karlsruhe-moltkestra-e-3-krebsgefahr-durch-schimmelpilze-013822/" class="postlist-link">Karlsruhe, Moltkestra?e 3. Krebsgefahr durch Schimmelpilze</a>
+    <a href="/blogccasion/2005/10/25/karlsruhe-moltkestrasse-3-krebsgefahr-durch-schimmelpilze-013822/" class="postlist-link">Karlsruhe, Moltkestra?e 3. Krebsgefahr durch Schimmelpilze</a>
     <time class="postlist-date" datetime="2005-10-25">25 Oct 2005</time>
     
       <a href="/blogccasion/tags/Private/" class="tag">Private</a>
@@ -1701,13 +1778,6 @@
   </li>
 
   <li class="postlist-item">
-    <a href="/blogccasion/2005/10/21/thomas-steiner-s-contact-data-180510/" class="postlist-link">Thomas Steiner&#39;s contact data</a>
-    <time class="postlist-date" datetime="2005-10-21">21 Oct 2005</time>
-    
-      <a href="/blogccasion/tags/Private/" class="tag">Private</a>
-  </li>
-
-  <li class="postlist-item">
     <a href="/blogccasion/2005/10/13/connection-adsl-avec-alice-et-son-noveau-alicebox-222607/" class="postlist-link">Connection ADSL avec Alice et son noveau AliceBox</a>
     <time class="postlist-date" datetime="2005-10-13">13 Oct 2005</time>
     
@@ -1724,7 +1794,7 @@
         <ul>
           <li>© 2005–2019 <a href="./">Thomas Steiner</a></li>
           <li>Distributed under <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></li>
-          <li>Contact and required <a href="./2005/10/21/thomas-steiners-contact-data-180510">legal info</a></li>
+          <li>Contact and required <a href="/about/">legal info</a></li>
           <li><small>This website uses Google Analytics</small></li>
         </ul>
         <amp-analytics type="googleanalytics">

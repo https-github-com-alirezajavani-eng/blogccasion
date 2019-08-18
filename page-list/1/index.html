@@ -23,6 +23,7 @@
       #content,
       #header {
         width: 100%;
+        max-width: 100%;
         border: 1px dashed silver
       }
 
@@ -242,7 +243,6 @@
 
       #content {
         margin: 0;
-        text-align: justify
       }
 
       #content h2 {
@@ -258,7 +258,6 @@
       #content p {
         font-size: 1em;
         margin: .5em 0;
-        text-align: justify
       }
 
       #content img {
@@ -276,17 +275,6 @@
       #content small {
         font-size: .9em;
         padding: .5em 0
-      }
-
-      #content pre {
-        font-family: monospace;
-        color: #00f;
-        background-color: #ffa;
-        margin: 2.5em;
-        font-size: .9em;
-        white-space: pre-wrap;
-        text-overflow: ellipsis;
-        overflow-x: scroll
       }
 
       #content a {
@@ -334,6 +322,16 @@
         list-style-position: inside
       }
 
+      pre {
+        max-width: calc(100% - 1rem);
+      }
+
+      code {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
+      }
+
       amp-iframe,
       iframe {
         max-width: 533px
@@ -366,6 +364,113 @@
           layout: responsive
         }
       }
+
+      /**
+      * Dracula Theme originally by Zeno Rocha [@zenorocha]
+      * https://draculatheme.com/
+      *
+      * Ported for PrismJS by Albert Vallverdu [@byverdu]
+      */
+
+      code[class*="language-"],
+      pre[class*="language-"] {
+        color: #f8f8f2;
+        background: none;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        line-height: 1.5;
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none; }
+
+      /* Code blocks */
+      pre[class*="language-"] {
+        padding: 1em;
+        margin: .5em 0;
+        overflow: auto;
+        border-radius: 0.3em; }
+
+      :not(pre) > code[class*="language-"],
+      pre[class*="language-"] {
+        background: #282a36; }
+
+      /* Inline code */
+      :not(pre) > code[class*="language-"] {
+        padding: .1em;
+        border-radius: .3em;
+        white-space: normal; }
+
+      .token.comment,
+      .token.prolog,
+      .token.doctype,
+      .token.cdata {
+        color: #6272a4; }
+
+      .token.punctuation {
+        color: #f8f8f2; }
+
+      .namespace {
+        opacity: .7; }
+
+      .token.property,
+      .token.tag,
+      .token.constant,
+      .token.symbol,
+      .token.deleted {
+        color: #ff79c6; }
+
+      .token.boolean,
+      .token.number {
+        color: #bd93f9; }
+
+      .token.selector,
+      .token.attr-name,
+      .token.string,
+      .token.char,
+      .token.builtin,
+      .token.inserted {
+        color: #50fa7b; }
+
+      .token.operator,
+      .token.entity,
+      .token.url,
+      .language-css .token.string,
+      .style .token.string,
+      .token.variable {
+        color: #f8f8f2; }
+
+      .token.atrule,
+      .token.attr-value,
+      .token.function,
+      .token.class-name {
+        color: #f1fa8c; }
+
+      .token.keyword {
+        color: #8be9fd; }
+
+      .token.regex,
+      .token.important {
+        color: #ffb86c; }
+
+      .token.important,
+      .token.bold {
+        font-weight: bold; }
+
+      .token.italic {
+        font-style: italic; }
+
+      .token.entity {
+        cursor: help; }
+
     </style>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
@@ -389,10 +494,10 @@
             <a href="/blogccasion/tags/Technical/" class="tag">Technical</a>
           
             
-            <a href="/blogccasion/tags/France/" class="tag">France</a>
+            <a href="/blogccasion/tags/Private/" class="tag">Private</a>
           
             
-            <a href="/blogccasion/tags/Private/" class="tag">Private</a>
+            <a href="/blogccasion/tags/France/" class="tag">France</a>
           
             
             <a href="/blogccasion/tags/Work/" class="tag">Work</a>
@@ -432,10 +537,6 @@
   </thead>
   <tbody>
   <tr>
-    <td><a href="/2005/12/27/blog-spam-on-my-blogccasion-software-120843/"><code>/2005/12/27/blog-spam-on-my-blogccasion-software-120843/</code></a></td>
-    <td>Blog-Spam On My blogccasion Software</td>
-  </tr>
-  <tr>
     <td><a href="/2006/01/10/apility-1-1-0-released-024353/"><code>/2006/01/10/apility-1-1-0-released-024353/</code></a></td>
     <td>APIlity 1.1.0 released</td>
   </tr>
@@ -444,8 +545,8 @@
     <td>Doing things the last time...</td>
   </tr>
   <tr>
-    <td><a href="/2006/02/05/updating-my-cv-amerikanischer-musterlebenslauf-mod-le-de-cv-am-ricain-134102/"><code>/2006/02/05/updating-my-cv-amerikanischer-musterlebenslauf-mod-le-de-cv-am-ricain-134102/</code></a></td>
-    <td>Updating my CV, amerikanischer Musterlebenslauf, mod?le de CV am?ricain</td>
+    <td><a href="/2006/02/05/updating-my-cv-amerikanischer-musterlebenslauf-modele-de-cv-americain-134102/"><code>/2006/02/05/updating-my-cv-amerikanischer-musterlebenslauf-modele-de-cv-americain-134102/</code></a></td>
+    <td>Updating my CV, amerikanischer Musterlebenslauf, modèle de CV américain</td>
   </tr>
   <tr>
     <td><a href="/2006/02/10/8-bit-may-never-die-001407/"><code>/2006/02/10/8-bit-may-never-die-001407/</code></a></td>
@@ -472,8 +573,8 @@
     <td>Welttag des Buches, Sant Jordi und das deutsche Reinheitsgebot</td>
   </tr>
   <tr>
-    <td><a href="/2006/04/24/kurioses-rund-ums-j1-visum-f-r-die-einreise-in-die-usa-153641/"><code>/2006/04/24/kurioses-rund-ums-j1-visum-f-r-die-einreise-in-die-usa-153641/</code></a></td>
-    <td>Kurioses rund ums J1 Visum f?r die Einreise in die USA</td>
+    <td><a href="/2006/04/24/kurioses-rund-ums-j1-visum-fuer-die-einreise-in-die-usa-153641/"><code>/2006/04/24/kurioses-rund-ums-j1-visum-fuer-die-einreise-in-die-usa-153641/</code></a></td>
+    <td>Kurioses rund ums J1 Visum für die Einreise in die USA</td>
   </tr>
   <tr>
     <td><a href="/2006/06/01/cantamos-para-no-llorar-the-orishas-004713/"><code>/2006/06/01/cantamos-para-no-llorar-the-orishas-004713/</code></a></td>
@@ -508,8 +609,12 @@
     <td>Mashup Camp 2</td>
   </tr>
   <tr>
-    <td><a href="/2006/07/16/spam-ist-nicht-sooo-bel-053627/"><code>/2006/07/16/spam-ist-nicht-sooo-bel-053627/</code></a></td>
-    <td>Spam ist nicht sooo ?bel</td>
+    <td><a href="/2006/07/16/spam-ist-nicht-sooo-uebel-053627/"><code>/2006/07/16/spam-ist-nicht-sooo-uebel-053627/</code></a></td>
+    <td>Spam ist nicht sooo übel</td>
+  </tr>
+  <tr>
+    <td><a href="/2006/08/01/apility-1-4-5-released-031754/"><code>/2006/08/01/apility-1-4-5-released-031754/</code></a></td>
+    <td>APIlity 1.4.5 released</td>
   </tr>
   </tbody>
 </table>
@@ -521,7 +626,7 @@
         <ul>
           <li>© 2005–2019 <a href="./">Thomas Steiner</a></li>
           <li>Distributed under <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></li>
-          <li>Contact and required <a href="./2005/10/21/thomas-steiners-contact-data-180510">legal info</a></li>
+          <li>Contact and required <a href="/about/">legal info</a></li>
           <li><small>This website uses Google Analytics</small></li>
         </ul>
         <amp-analytics type="googleanalytics">

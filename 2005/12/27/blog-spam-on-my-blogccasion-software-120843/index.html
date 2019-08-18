@@ -23,6 +23,7 @@
       #content,
       #header {
         width: 100%;
+        max-width: 100%;
         border: 1px dashed silver
       }
 
@@ -242,7 +243,6 @@
 
       #content {
         margin: 0;
-        text-align: justify
       }
 
       #content h2 {
@@ -258,7 +258,6 @@
       #content p {
         font-size: 1em;
         margin: .5em 0;
-        text-align: justify
       }
 
       #content img {
@@ -276,17 +275,6 @@
       #content small {
         font-size: .9em;
         padding: .5em 0
-      }
-
-      #content pre {
-        font-family: monospace;
-        color: #00f;
-        background-color: #ffa;
-        margin: 2.5em;
-        font-size: .9em;
-        white-space: pre-wrap;
-        text-overflow: ellipsis;
-        overflow-x: scroll
       }
 
       #content a {
@@ -334,6 +322,16 @@
         list-style-position: inside
       }
 
+      pre {
+        max-width: calc(100% - 1rem);
+      }
+
+      code {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
+      }
+
       amp-iframe,
       iframe {
         max-width: 533px
@@ -366,6 +364,113 @@
           layout: responsive
         }
       }
+
+      /**
+      * Dracula Theme originally by Zeno Rocha [@zenorocha]
+      * https://draculatheme.com/
+      *
+      * Ported for PrismJS by Albert Vallverdu [@byverdu]
+      */
+
+      code[class*="language-"],
+      pre[class*="language-"] {
+        color: #f8f8f2;
+        background: none;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        line-height: 1.5;
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none; }
+
+      /* Code blocks */
+      pre[class*="language-"] {
+        padding: 1em;
+        margin: .5em 0;
+        overflow: auto;
+        border-radius: 0.3em; }
+
+      :not(pre) > code[class*="language-"],
+      pre[class*="language-"] {
+        background: #282a36; }
+
+      /* Inline code */
+      :not(pre) > code[class*="language-"] {
+        padding: .1em;
+        border-radius: .3em;
+        white-space: normal; }
+
+      .token.comment,
+      .token.prolog,
+      .token.doctype,
+      .token.cdata {
+        color: #6272a4; }
+
+      .token.punctuation {
+        color: #f8f8f2; }
+
+      .namespace {
+        opacity: .7; }
+
+      .token.property,
+      .token.tag,
+      .token.constant,
+      .token.symbol,
+      .token.deleted {
+        color: #ff79c6; }
+
+      .token.boolean,
+      .token.number {
+        color: #bd93f9; }
+
+      .token.selector,
+      .token.attr-name,
+      .token.string,
+      .token.char,
+      .token.builtin,
+      .token.inserted {
+        color: #50fa7b; }
+
+      .token.operator,
+      .token.entity,
+      .token.url,
+      .language-css .token.string,
+      .style .token.string,
+      .token.variable {
+        color: #f8f8f2; }
+
+      .token.atrule,
+      .token.attr-value,
+      .token.function,
+      .token.class-name {
+        color: #f1fa8c; }
+
+      .token.keyword {
+        color: #8be9fd; }
+
+      .token.regex,
+      .token.important {
+        color: #ffb86c; }
+
+      .token.important,
+      .token.bold {
+        font-weight: bold; }
+
+      .token.italic {
+        font-style: italic; }
+
+      .token.entity {
+        cursor: help; }
+
     </style>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
@@ -389,10 +494,10 @@
             <a href="/blogccasion/tags/Technical/" class="tag">Technical</a>
           
             
-            <a href="/blogccasion/tags/France/" class="tag">France</a>
+            <a href="/blogccasion/tags/Private/" class="tag">Private</a>
           
             
-            <a href="/blogccasion/tags/Private/" class="tag">Private</a>
+            <a href="/blogccasion/tags/France/" class="tag">France</a>
           
             
             <a href="/blogccasion/tags/Work/" class="tag">Work</a>
@@ -430,8 +535,7 @@
     <a href="/blogccasion/2005/12/27/blog-spam-on-my-blogccasion-software-120843/"><h3>Blog-Spam On My blogccasion Software</h3></a>
     <div>
       <small>
-        Created on <time datetime=""></time>
-        and categorized as <a class='' href=''></a>.
+        Created on <b><time datetime="2005-12-27T12:08:43.000Z">Tue Dec 27 2005</time></b>.
       </small>
     </div>
     <div><small>Written by <b>Thomas Steiner</b>.</small></div>
@@ -441,14 +545,14 @@
 <br />
 Spam seems to be one of the most-spread evils of the internet age. Since december 26 it also reached my blog. I get a lot of <b>poker spam</b> from various online gambling sites. Besides the fact that I am a really poor poker player <small>(I am good at making a poker face but bad at having the adequate cards...)</small> I prefer losing offline instead of online.<br />
 <br />
-Enough reason to fight spam. I did some research and found out that comment spamming seems to be a huge problem on <a href="http://wordpress.org/" target="_blank">WordPress</a>, a popular semantic personal publishing platform. I am surprised at the fact that the spammers digged into my homebrew blogccasion software (<a href="https://blog.tomayac.com/index.php?date=2005-10-23&time=01:06:29&perma=Why+I+started+to+blo.html">my reasons for developping my own blogging software</a>). Its structure is very open (and designed as an experiment to <b>trust in the commenter's personal responsibility</b>). By now I experienced good results and only once decided to change a comment into a text link to the origin site (last comment on the <a href="https://blog.tomayac.com/index.php?date=2005-11-05&time=20:01:11&perma=Paris+Riots+November.html">blog entry on the Paris riots</a>).<br />
+Enough reason to fight spam. I did some research and found out that comment spamming seems to be a huge problem on <a href="http://wordpress.org/" target="_blank">WordPress</a>, a popular semantic personal publishing platform. I am surprised at the fact that the spammers digged into my homebrew blogccasion software (<a href="/index.php?date=2005-10-23&time=01:06:29&perma=Why+I+started+to+blo.html">my reasons for developping my own blogging software</a>). Its structure is very open (and designed as an experiment to <b>trust in the commenter's personal responsibility</b>). By now I experienced good results and only once decided to change a comment into a text link to the origin site (last comment on the <a href="/index.php?date=2005-11-05&time=20:01:11&perma=Paris+Riots+November.html">blog entry on the Paris riots</a>).<br />
 <br />
 The comment form passes its contents to <span style="font-family:monospace;">WriteBlogComment.php</span> where first all HTML tags get removed and second the database entry gets written. I do not force the commenter neither to provide a valid email address nor to provide his name. Looks like this open structure is too na?ve in the age of spam bots. Common ways to fight comment spam are so-called <a href="http://en.wikipedia.org/wiki/CAPTCHA" target="_blank">Captchas</a> with the inconvenience of being a graphical solution. There has been a lot of <a href="http://www.w3.org/TR/turingtest/" target="_blank">research on the inaccesibility of captchas</a>. I try to keep to the <a href="http://www.nfb.org/tech/webacc.htm" target="_blank">web accesibility rules</a> as proposed by many organisations, among the W3C. So I developed a set of trivial arithmetic problems as proposed by the document mentioned above:<br />
 <br />
 <i>The goal [...] is to separate human from machine. One reasonable way to do this is to test for logic. Simple mathematical word puzzles, trivia, and the like may raise the bar for robots, at least to the point where using them is more attractive elsewhere.<br />
 Problems: Users with cognitive disabilities may still have trouble. Answers may need to be handled flexibly, if they require free-form text. A system would have to maintain a vast number of questions, or shift them around programmatically, in order to keep spiders from capturing them all.</i><br />
 <br />
-My <a href="https://blog.tomayac.com/arithmeticTriviaTuringTest.phps" target="_blank">simple Turing Test</a> can be used for free.<br />
+My <a href="/arithmeticTriviaTuringTest.phps" target="_blank">simple Turing Test</a> can be used for free.<br />
 <br />
 <small>Image from <a href="http://en.wikipedia.org/wiki/SPAM" target="_blank">wikipedia.org</a></small>
 </article>
@@ -460,7 +564,7 @@ My <a href="https://blog.tomayac.com/arithmeticTriviaTuringTest.phps" target="_b
         <ul>
           <li>© 2005–2019 <a href="./">Thomas Steiner</a></li>
           <li>Distributed under <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></li>
-          <li>Contact and required <a href="./2005/10/21/thomas-steiners-contact-data-180510">legal info</a></li>
+          <li>Contact and required <a href="/about/">legal info</a></li>
           <li><small>This website uses Google Analytics</small></li>
         </ul>
         <amp-analytics type="googleanalytics">

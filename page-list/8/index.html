@@ -23,6 +23,7 @@
       #content,
       #header {
         width: 100%;
+        max-width: 100%;
         border: 1px dashed silver
       }
 
@@ -242,7 +243,6 @@
 
       #content {
         margin: 0;
-        text-align: justify
       }
 
       #content h2 {
@@ -258,7 +258,6 @@
       #content p {
         font-size: 1em;
         margin: .5em 0;
-        text-align: justify
       }
 
       #content img {
@@ -276,17 +275,6 @@
       #content small {
         font-size: .9em;
         padding: .5em 0
-      }
-
-      #content pre {
-        font-family: monospace;
-        color: #00f;
-        background-color: #ffa;
-        margin: 2.5em;
-        font-size: .9em;
-        white-space: pre-wrap;
-        text-overflow: ellipsis;
-        overflow-x: scroll
       }
 
       #content a {
@@ -334,6 +322,16 @@
         list-style-position: inside
       }
 
+      pre {
+        max-width: calc(100% - 1rem);
+      }
+
+      code {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
+      }
+
       amp-iframe,
       iframe {
         max-width: 533px
@@ -366,6 +364,113 @@
           layout: responsive
         }
       }
+
+      /**
+      * Dracula Theme originally by Zeno Rocha [@zenorocha]
+      * https://draculatheme.com/
+      *
+      * Ported for PrismJS by Albert Vallverdu [@byverdu]
+      */
+
+      code[class*="language-"],
+      pre[class*="language-"] {
+        color: #f8f8f2;
+        background: none;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        line-height: 1.5;
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none; }
+
+      /* Code blocks */
+      pre[class*="language-"] {
+        padding: 1em;
+        margin: .5em 0;
+        overflow: auto;
+        border-radius: 0.3em; }
+
+      :not(pre) > code[class*="language-"],
+      pre[class*="language-"] {
+        background: #282a36; }
+
+      /* Inline code */
+      :not(pre) > code[class*="language-"] {
+        padding: .1em;
+        border-radius: .3em;
+        white-space: normal; }
+
+      .token.comment,
+      .token.prolog,
+      .token.doctype,
+      .token.cdata {
+        color: #6272a4; }
+
+      .token.punctuation {
+        color: #f8f8f2; }
+
+      .namespace {
+        opacity: .7; }
+
+      .token.property,
+      .token.tag,
+      .token.constant,
+      .token.symbol,
+      .token.deleted {
+        color: #ff79c6; }
+
+      .token.boolean,
+      .token.number {
+        color: #bd93f9; }
+
+      .token.selector,
+      .token.attr-name,
+      .token.string,
+      .token.char,
+      .token.builtin,
+      .token.inserted {
+        color: #50fa7b; }
+
+      .token.operator,
+      .token.entity,
+      .token.url,
+      .language-css .token.string,
+      .style .token.string,
+      .token.variable {
+        color: #f8f8f2; }
+
+      .token.atrule,
+      .token.attr-value,
+      .token.function,
+      .token.class-name {
+        color: #f1fa8c; }
+
+      .token.keyword {
+        color: #8be9fd; }
+
+      .token.regex,
+      .token.important {
+        color: #ffb86c; }
+
+      .token.important,
+      .token.bold {
+        font-weight: bold; }
+
+      .token.italic {
+        font-style: italic; }
+
+      .token.entity {
+        cursor: help; }
+
     </style>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
@@ -389,10 +494,10 @@
             <a href="/blogccasion/tags/Technical/" class="tag">Technical</a>
           
             
-            <a href="/blogccasion/tags/France/" class="tag">France</a>
+            <a href="/blogccasion/tags/Private/" class="tag">Private</a>
           
             
-            <a href="/blogccasion/tags/Private/" class="tag">Private</a>
+            <a href="/blogccasion/tags/France/" class="tag">France</a>
           
             
             <a href="/blogccasion/tags/Work/" class="tag">Work</a>
@@ -432,20 +537,12 @@
   </thead>
   <tbody>
   <tr>
-    <td><a href="/2017/02/20/service-worker-detector-chrome-extension-released-221400/"><code>/2017/02/20/service-worker-detector-chrome-extension-released-221400/</code></a></td>
-    <td>Service Worker Detector Chrome Extension Released</td>
-  </tr>
-  <tr>
     <td><a href="/2018/04/08/amp-cache-adding-an-external-css-style-sheet-130437/"><code>/2018/04/08/amp-cache-adding-an-external-css-style-sheet-130437/</code></a></td>
-    <td>AMP cache adding an external css style sheet?</td>
+    <td>AMP cache adding an external CSS style sheet?</td>
   </tr>
   <tr>
     <td><a href="/2018/06/25/linux-on-a-mid-2007-imac-093225/"><code>/2018/06/25/linux-on-a-mid-2007-imac-093225/</code></a></td>
     <td>Linux on a Mid 2007 iMac</td>
-  </tr>
-  <tr>
-    <td><a href="/posts/progressive-web-apps-in-the-http-archive/"><code>/posts/progressive-web-apps-in-the-http-archive/</code></a></td>
-    <td>Progressive Web Apps in the HTTP Archive</td>
   </tr>
   <tr>
     <td><a href="/2018/07/09/progressive-web-apps-in-the-http-archive-143748/"><code>/2018/07/09/progressive-web-apps-in-the-http-archive-143748/</code></a></td>
@@ -456,16 +553,8 @@
     <td>Submitting a Microsoft Edge extension to the Microsoft Store</td>
   </tr>
   <tr>
-    <td><a href="/posts/service-worker-caching-strategies-based-on-request-types/"><code>/posts/service-worker-caching-strategies-based-on-request-types/</code></a></td>
-    <td>Service Worker Caching Strategies Based on Request Types</td>
-  </tr>
-  <tr>
     <td><a href="/2018/08/22/service-worker-caching-strategies-based-on-request-types-114542/"><code>/2018/08/22/service-worker-caching-strategies-based-on-request-types-114542/</code></a></td>
     <td>Service Worker Caching Strategies Based on Request Types</td>
-  </tr>
-  <tr>
-    <td><a href="/posts/new-top-level-http-archive-report-on-progressive-web-apps/"><code>/posts/new-top-level-http-archive-report-on-progressive-web-apps/</code></a></td>
-    <td>New top-level HTTP Archive Report on Progressive Web Apps</td>
   </tr>
   <tr>
     <td><a href="/2018/08/30/new-top-level-http-archive-report-on-progressive-web-apps-101438/"><code>/2018/08/30/new-top-level-http-archive-report-on-progressive-web-apps-101438/</code></a></td>
@@ -476,40 +565,56 @@
     <td>Why Browsers Download Stylesheets With Non-Matching Media Queries</td>
   </tr>
   <tr>
-    <td><a href="/posts/why-build-progressive-web-apps:-never-lose-a-click-out!video-write-up/"><code>/posts/why-build-progressive-web-apps:-never-lose-a-click-out!video-write-up/</code></a></td>
+    <td><a href="/2018/12/03/why-build-progressive-web-apps-never-lose-a-click-out-video-write-up/"><code>/2018/12/03/why-build-progressive-web-apps-never-lose-a-click-out-video-write-up/</code></a></td>
     <td>Why Build Progressive Web Apps: Never Lose a Click-Out!—Video Write-Up</td>
   </tr>
   <tr>
-    <td><a href="/2018/12/03/why-build-progressive-web-apps-never-lose-a-click-out-video-write-up-160228/"><code>/2018/12/03/why-build-progressive-web-apps-never-lose-a-click-out-video-write-up-160228/</code></a></td>
-    <td>Why Build Progressive Web Apps: Never Lose a Click-Out! (Video Write-Up)</td>
-  </tr>
-  <tr>
-    <td><a href="/posts/why-build-progressive-web-apps:-push-but-don&#39;t-be-pushy!-video-write-up/"><code>/posts/why-build-progressive-web-apps:-push-but-don&#39;t-be-pushy!-video-write-up/</code></a></td>
+    <td><a href="/2018/12/04/why-build-progressive-web-apps-push-but-dont-be-pushy-video-write-up/"><code>/2018/12/04/why-build-progressive-web-apps-push-but-dont-be-pushy-video-write-up/</code></a></td>
     <td>Why Build Progressive Web Apps: Push, but Don’t be Pushy! — Video Write-Up</td>
   </tr>
   <tr>
-    <td><a href="/2018/12/05/why-build-progressive-web-apps-push-but-don-t-be-pushy-video-write-up-094452/"><code>/2018/12/05/why-build-progressive-web-apps-push-but-don-t-be-pushy-video-write-up-094452/</code></a></td>
-    <td>Why Build Progressive Web Apps: Push, but Don&#39;t be Pushy!? (Video Write-Up)</td>
-  </tr>
-  <tr>
-    <td><a href="/posts/why-build-progressive-web-apps:-if-it&#39;s-just-a-bookmark-it&#39;s-not-a-pwa!video-write-up/"><code>/posts/why-build-progressive-web-apps:-if-it&#39;s-just-a-bookmark-it&#39;s-not-a-pwa!video-write-up/</code></a></td>
+    <td><a href="/2018/12/11/why-build-progressive-web-apps-if-its-just-a-bookmark-its-not-a-pwa-video-write-up/"><code>/2018/12/11/why-build-progressive-web-apps-if-its-just-a-bookmark-its-not-a-pwa-video-write-up/</code></a></td>
     <td>Why Build Progressive Web Apps: If It’s Just a Bookmark, It’s not a PWA!—Video Write-Up</td>
   </tr>
   <tr>
-    <td><a href="/posts/why-browsers-download-stylesheets-with-non-matching-media-queries/"><code>/posts/why-browsers-download-stylesheets-with-non-matching-media-queries/</code></a></td>
-    <td>Why Browsers Download Stylesheets With Non-Matching Media Queries</td>
-  </tr>
-  <tr>
-    <td><a href="/posts/experimenting-with-the-wake-lock-api/"><code>/posts/experimenting-with-the-wake-lock-api/</code></a></td>
+    <td><a href="/2018/12/18/experimenting-with-the-wake-lock-api/"><code>/2018/12/18/experimenting-with-the-wake-lock-api/</code></a></td>
     <td>Experimenting with the Wake Lock API</td>
   </tr>
   <tr>
-    <td><a href="/posts/progressive-web-app-progress-in-ios-12.2-beta-1-(build-16e5181f)/"><code>/posts/progressive-web-app-progress-in-ios-12.2-beta-1-(build-16e5181f)/</code></a></td>
+    <td><a href="/2019/01/28/progressive-web-app-progress-in-ios-12.2-beta-1-build-16e5181f/"><code>/2019/01/28/progressive-web-app-progress-in-ios-12.2-beta-1-build-16e5181f/</code></a></td>
     <td>Progressive Web App Progress in iOS 12.2 Beta 1 (Build 16E5181f)</td>
   </tr>
   <tr>
-    <td><a href="/posts/engaging-in-web-standardsthe-&quot;compatible-with-most-web-developers&quot;-approach/"><code>/posts/engaging-in-web-standardsthe-&quot;compatible-with-most-web-developers&quot;-approach/</code></a></td>
+    <td><a href="/2019/02/05/engaging-in-web-standards-the-compatible-with-most-web-developers-approach/"><code>/2019/02/05/engaging-in-web-standards-the-compatible-with-most-web-developers-approach/</code></a></td>
     <td>Engaging in Web Standards—The “Compatible with Most Web Developers” Approach</td>
+  </tr>
+  <tr>
+    <td><a href="/2019/03/22/two-http-headers-related-to-service-workers-you-never-may-have-heard-of/"><code>/2019/03/22/two-http-headers-related-to-service-workers-you-never-may-have-heard-of/</code></a></td>
+    <td>Two HTTP headers related to Service Workers you never may have heard of</td>
+  </tr>
+  <tr>
+    <td><a href="/2019/04/03/what-does-dark-modes-color-scheme-actually-do/"><code>/2019/04/03/what-does-dark-modes-color-scheme-actually-do/</code></a></td>
+    <td>What Does Dark Mode’s “color-scheme” Actually Do? 🤔</td>
+  </tr>
+  <tr>
+    <td><a href="/2019/04/04/let-there-be-darkness-maybe/"><code>/2019/04/04/let-there-be-darkness-maybe/</code></a></td>
+    <td>Let there be darkness! 🌚 Maybe…</td>
+  </tr>
+  <tr>
+    <td><a href="/2019/05/28/re-colorization-for-dark-mode/"><code>/2019/05/28/re-colorization-for-dark-mode/</code></a></td>
+    <td>Re-Colorization for Dark Mode</td>
+  </tr>
+  <tr>
+    <td><a href="/2019/08/15/a-quick-look-at-wechats-mini-programs/"><code>/2019/08/15/a-quick-look-at-wechats-mini-programs/</code></a></td>
+    <td>A Quick Look At WeChat&#39;s Mini Programs</td>
+  </tr>
+  <tr>
+    <td><a href="/about/"><code>/about/</code></a></td>
+    <td>About Me</td>
+  </tr>
+  <tr>
+    <td><a href="/posts/"><code>/posts/</code></a></td>
+    <td></td>
   </tr>
   </tbody>
 </table>
@@ -521,7 +626,7 @@
         <ul>
           <li>© 2005–2019 <a href="./">Thomas Steiner</a></li>
           <li>Distributed under <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></li>
-          <li>Contact and required <a href="./2005/10/21/thomas-steiners-contact-data-180510">legal info</a></li>
+          <li>Contact and required <a href="/about/">legal info</a></li>
           <li><small>This website uses Google Analytics</small></li>
         </ul>
         <amp-analytics type="googleanalytics">

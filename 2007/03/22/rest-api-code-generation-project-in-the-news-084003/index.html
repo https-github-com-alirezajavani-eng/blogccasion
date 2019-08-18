@@ -23,6 +23,7 @@
       #content,
       #header {
         width: 100%;
+        max-width: 100%;
         border: 1px dashed silver
       }
 
@@ -242,7 +243,6 @@
 
       #content {
         margin: 0;
-        text-align: justify
       }
 
       #content h2 {
@@ -258,7 +258,6 @@
       #content p {
         font-size: 1em;
         margin: .5em 0;
-        text-align: justify
       }
 
       #content img {
@@ -276,17 +275,6 @@
       #content small {
         font-size: .9em;
         padding: .5em 0
-      }
-
-      #content pre {
-        font-family: monospace;
-        color: #00f;
-        background-color: #ffa;
-        margin: 2.5em;
-        font-size: .9em;
-        white-space: pre-wrap;
-        text-overflow: ellipsis;
-        overflow-x: scroll
       }
 
       #content a {
@@ -334,6 +322,16 @@
         list-style-position: inside
       }
 
+      pre {
+        max-width: calc(100% - 1rem);
+      }
+
+      code {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
+      }
+
       amp-iframe,
       iframe {
         max-width: 533px
@@ -366,6 +364,113 @@
           layout: responsive
         }
       }
+
+      /**
+      * Dracula Theme originally by Zeno Rocha [@zenorocha]
+      * https://draculatheme.com/
+      *
+      * Ported for PrismJS by Albert Vallverdu [@byverdu]
+      */
+
+      code[class*="language-"],
+      pre[class*="language-"] {
+        color: #f8f8f2;
+        background: none;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        line-height: 1.5;
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none; }
+
+      /* Code blocks */
+      pre[class*="language-"] {
+        padding: 1em;
+        margin: .5em 0;
+        overflow: auto;
+        border-radius: 0.3em; }
+
+      :not(pre) > code[class*="language-"],
+      pre[class*="language-"] {
+        background: #282a36; }
+
+      /* Inline code */
+      :not(pre) > code[class*="language-"] {
+        padding: .1em;
+        border-radius: .3em;
+        white-space: normal; }
+
+      .token.comment,
+      .token.prolog,
+      .token.doctype,
+      .token.cdata {
+        color: #6272a4; }
+
+      .token.punctuation {
+        color: #f8f8f2; }
+
+      .namespace {
+        opacity: .7; }
+
+      .token.property,
+      .token.tag,
+      .token.constant,
+      .token.symbol,
+      .token.deleted {
+        color: #ff79c6; }
+
+      .token.boolean,
+      .token.number {
+        color: #bd93f9; }
+
+      .token.selector,
+      .token.attr-name,
+      .token.string,
+      .token.char,
+      .token.builtin,
+      .token.inserted {
+        color: #50fa7b; }
+
+      .token.operator,
+      .token.entity,
+      .token.url,
+      .language-css .token.string,
+      .style .token.string,
+      .token.variable {
+        color: #f8f8f2; }
+
+      .token.atrule,
+      .token.attr-value,
+      .token.function,
+      .token.class-name {
+        color: #f1fa8c; }
+
+      .token.keyword {
+        color: #8be9fd; }
+
+      .token.regex,
+      .token.important {
+        color: #ffb86c; }
+
+      .token.important,
+      .token.bold {
+        font-weight: bold; }
+
+      .token.italic {
+        font-style: italic; }
+
+      .token.entity {
+        cursor: help; }
+
     </style>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
@@ -389,10 +494,10 @@
             <a href="/blogccasion/tags/Technical/" class="tag">Technical</a>
           
             
-            <a href="/blogccasion/tags/France/" class="tag">France</a>
+            <a href="/blogccasion/tags/Private/" class="tag">Private</a>
           
             
-            <a href="/blogccasion/tags/Private/" class="tag">Private</a>
+            <a href="/blogccasion/tags/France/" class="tag">France</a>
           
             
             <a href="/blogccasion/tags/Work/" class="tag">Work</a>
@@ -430,8 +535,7 @@
     <a href="/blogccasion/2007/03/22/rest-api-code-generation-project-in-the-news-084003/"><h3>REST API Code Generation project in the news...</h3></a>
     <div>
       <small>
-        Created on <time datetime=""></time>
-        and categorized as <a class='' href=''></a>.
+        Created on <b><time datetime="2007-03-22T08:40:03.000Z">Thu Mar 22 2007</time></b>.
       </small>
     </div>
     <div><small>Written by <b>Thomas Steiner</b>.</small></div>
@@ -439,9 +543,9 @@
   </header>
   <b>REST API Code Generation project in the news...</b><br />
 <br />
-This morning when I started my work day by reading the news in Google Reader, I noticed that my project announced <a href="https://blog.tomayac.com/index.php?date=2007-03-12&time=17:11:27&perma=Automatic+Multi+Lang.html">earlier </a> had gotten some attention:<ul><li><a href="http://www.infoq.com/news/2007/03/WADL">InfoQ</a> came up with the initial story which was later picked up by</li><li>the folks from <a href="http://blog.programmableweb.com/2007/03/22/wadl-and-google-rest-compile/">Programmable Web</a></li></ul>It seems to be common practice among the description language architects to start with a <a href="http://developer.yahoo.com/search/news/V1/newsSearch.html">Yahoo News Search API</a> description, so I justed sticked to this tradition. Below is a very early screenshot of REST Describe running in Firefox. You can see the screenshot in a fullscreen view by clicking on it:<br />
+This morning when I started my work day by reading the news in Google Reader, I noticed that my project announced <a href="/index.php?date=2007-03-12&time=17:11:27&perma=Automatic+Multi+Lang.html">earlier </a> had gotten some attention:<ul><li><a href="http://www.infoq.com/news/2007/03/WADL">InfoQ</a> came up with the initial story which was later picked up by</li><li>the folks from <a href="http://blog.programmableweb.com/2007/03/22/wadl-and-google-rest-compile/">Programmable Web</a></li></ul>It seems to be common practice among the description language architects to start with a <a href="http://developer.yahoo.com/search/news/V1/newsSearch.html">Yahoo News Search API</a> description, so I justed sticked to this tradition. Below is a very early screenshot of REST Describe running in Firefox. You can see the screenshot in a fullscreen view by clicking on it:<br />
 <a href="/images/Google_REST_Describe_early_screenshot.png"><img src="/images/Google_REST_Describe_early_screenshot.png" border="0" width="300" alt="REST Describe"></a><br />
-If you are interested in the project, please see the <a href="https://blog.tomayac.com/index.php?date=2007-03-12&time=17:11:27&perma=Automatic+Multi+Lang.html">earlier </a> blog post for the related links. Thank you.<br />
+If you are interested in the project, please see the <a href="/index.php?date=2007-03-12&time=17:11:27&perma=Automatic+Multi+Lang.html">earlier </a> blog post for the related links. Thank you.<br />
 <br />
 <small><span style="color:gray;">Please note: REST Describe and REST Compile are no official Google products.</span></small>
 </article>
@@ -453,7 +557,7 @@ If you are interested in the project, please see the <a href="https://blog.tomay
         <ul>
           <li>© 2005–2019 <a href="./">Thomas Steiner</a></li>
           <li>Distributed under <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></li>
-          <li>Contact and required <a href="./2005/10/21/thomas-steiners-contact-data-180510">legal info</a></li>
+          <li>Contact and required <a href="/about/">legal info</a></li>
           <li><small>This website uses Google Analytics</small></li>
         </ul>
         <amp-analytics type="googleanalytics">
