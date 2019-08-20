@@ -68,7 +68,7 @@ Soviel dazu. In der Tat haben die &lt;a href=&quot;http://www.olympic.org/fr/gam
 		<link href="https://blog.tomayac.com/blogccasion/2005/10/22/working-at-google-for-the-apility-php-project-222502/"/>
 		<updated>2005-10-22T22:25:02+00:00</updated>
 		<id>https://blog.tomayac.com/blogccasion/2005/10/22/working-at-google-for-the-apility-php-project-222502/</id>
-		<content type="html">Being in the happy position of &lt;a href=&quot;http://www.google.com/intl/en/jobs/index.html&quot; target=&quot;_blank&quot;&gt;working at Google&lt;/a&gt; as a part-time contractor from Grenoble, France &lt;img src=&quot;http://www.google.com/apis/adwords/images/google_small.gif&quot; alt=&quot;Google AdWords logo&quot; align=&quot;left&quot;&gt; as a Software Engineer and AdWords API evangelist, I would like to blog about the inside story of my work life. My current project is the &lt;a href=&quot;http://google-apility.sourceforge.net/&quot; target=&quot;_blank&quot;&gt;APIlity PHP library&lt;/a&gt; for Google&#39;s advertising program AdWords which can be managed by a web front-end or, with the right tools, a lot more comfortable via the &lt;a href=&quot;http://www.google.com/apis/adwords/&quot; target=&quot;_blank&quot;&gt;AdWords API&lt;/a&gt;. &lt;br&gt;
+		<content type="html">Being in the happy position of &lt;a href=&quot;http://www.google.com/intl/en/jobs/index.html&quot; target=&quot;_blank&quot;&gt;working at Google&lt;/a&gt; as a part-time contractor from Grenoble, France &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Ads_logo.svg/192px-Google_Ads_logo.svg.png&quot; alt=&quot;Google Ads logo&quot; align=&quot;left&quot;&gt; as a Software Engineer and AdWords API evangelist, I would like to blog about the inside story of my work life. My current project is the &lt;a href=&quot;http://google-apility.sourceforge.net/&quot; target=&quot;_blank&quot;&gt;APIlity PHP library&lt;/a&gt; for Google&#39;s advertising program AdWords which can be managed by a web front-end or, with the right tools, a lot more comfortable via the &lt;a href=&quot;http://www.google.com/apis/adwords/&quot; target=&quot;_blank&quot;&gt;AdWords API&lt;/a&gt;. &lt;br&gt;
 &lt;br&gt;
 The APIlity PHP Library provides an object-oriented way to easily access and manage the Google AdWords API from within PHP. This comes along with an abstraction from the SOAP and WSDL details.&lt;br&gt;
 &lt;br&gt;
@@ -92,7 +92,8 @@ Criterion service only (Keyword service will be history)&lt;br&gt;
 MySQL layer (something like a local DB cache)&lt;br&gt;
 Whatever the community suggests (well, almost whatever...)&lt;/div&gt;See &lt;a href=&quot;http://groups.google.com/group/adwords-api-php/browse_thread/thread/318bd58da92faac0/bc5a56e5927ff6a4#bc5a56e5927ff6a4&quot; target=&quot;_blank&quot;&gt;what the APIlity community says&lt;/a&gt; about this roadmap.&lt;br&gt;
 &lt;br&gt;
-&lt;small&gt;The opinions expressed here are my own. Neither my employer nor any other party necessarily agrees with them.&lt;/small&gt;</content>
+&lt;small&gt;The opinions expressed here are my own. Neither my employer nor any other party necessarily agrees with them.&lt;/small&gt;
+</content>
 	</entry>
 	
 	<entry>
