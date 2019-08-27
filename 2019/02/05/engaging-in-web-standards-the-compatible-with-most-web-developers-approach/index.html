@@ -491,16 +491,16 @@
           <a href="/"><amp-img src="/static/mountains_sunrise.jpg" alt="" width="120" height="23"></amp-img></a>
           
             
-            <a href="/blogccasion/tags/Private/" class="tag">Private</a>
+            <a href="/blogccasion/tags/Technical/" class="tag">Technical</a>
           
             
-            <a href="/blogccasion/tags/Technical/" class="tag">Technical</a>
+            <a href="/blogccasion/tags/France/" class="tag">France</a>
           
             
             <a href="/blogccasion/tags/Work/" class="tag">Work</a>
           
             
-            <a href="/blogccasion/tags/France/" class="tag">France</a>
+            <a href="/blogccasion/tags/Private/" class="tag">Private</a>
           
             
             <a href="/blogccasion/tags/Political/" class="tag">Political</a>
@@ -553,7 +553,7 @@
   <blockquote>
 <p>😨📖 <strong>tl;dr:</strong> Whether you want to add something new to an already existing feature or propose a completely new one, it all starts with finding out in what organization the standardization process for this kind of feature happens and where this organization’s discussions take place. This post suggests a possible approach to engaging in standardization work in a meaningful way for regular web developers whose day job is not standards by following along a step-by-step real-world example that takes you through the journey and encourages you to make your voice heard.</p>
 </blockquote>
-<p>At Google, we have a humbling 👌(!) team of amazing <a href="https://developers.google.com/experts/all/technology/web-technologies">Google Developer Experts that specialize on Web Technologies</a>. The other day, one of them on a mailing list suggested the following feature (paraphrased from the email thread): “Consider adding support for a <code>titlecase</code> keyword for the CSS <code>[text-transform](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform)</code> property”. They explained:</p>
+<p>At Google, we have a humbling 👌(!) team of amazing <a href="https://developers.google.com/experts/all/technology/web-technologies">Google Developer Experts that specialize on Web Technologies</a>. The other day, one of them on a mailing list suggested the following feature (paraphrased from the email thread): “Consider adding support for a <code>titlecase</code> keyword for the CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform"><code>text-transform</code></a> property”. They explained:</p>
 <blockquote>
 <p>“Some time ago, I wanted to unify the capitalization of all titles in my app and thought of using CSS <code>text-transform</code>. It supports <code>capitalize</code>, <code>uppercase</code>, and <code>lowercase</code> [among others]. Upon further investigation, I found not all words are capitalized in English in title case. For example, ‘a’, ‘an’, ‘the’, ‘and’, ‘in’, ‘of’, ‘as’, ‘to’, etc. are not capitalized. So using the <code>capitalize</code> keyword of CSS <code>text-transform</code> does not match the English convention, and developers need to write the conversion by hand.”</p>
 </blockquote>
@@ -566,7 +566,7 @@
 </blockquote>
 <p><img src="/images/asset-1_3.png" alt="World Wide Web Consortium (W3C) logo"></p>
 <h3 id="contributing-to-web-standards-as-someone-who-self-identifies-as-%E2%80%9Cmost-web-developers%E2%80%9D">Contributing to Web Standards as Someone Who Self-Identifies as “Most Web Developers” <a class="direct-link" href="#contributing-to-web-standards-as-someone-who-self-identifies-as-%E2%80%9Cmost-web-developers%E2%80%9D" aria-hidden="true">#</a></h3>
-<p>It would probably get a <code>[[citation needed]](https://en.wikipedia.org/wiki/Wikipedia:Citation_needed)</code> tag on Wikipedia, but the statement stands: “Most web developers just do not know how to provide feedback”. I (<a href="https://twitter.com/tomayac">Tom</a>, Google Web Developer Advocate 🥑) thought maybe I could attempt to address this challenge and try to come up with an answer. While I am <em>definitely not</em> the most authoritative source for standards works, I have landed a few minor changes in various W3C specs. With that out of the way, let me guide you through <strong><em>my personal approach</em></strong> to potentially landing a feature request like “correct” title case support.</p>
+<p>It would probably get a <a href="https://en.wikipedia.org/wiki/Wikipedia:Citation_needed"><code>[citation needed]</code></a> tag on Wikipedia, but the statement stands: “Most web developers just do not know how to provide feedback”. I (<a href="https://twitter.com/tomayac">Tom</a>, Google Web Developer Advocate 🥑) thought maybe I could attempt to address this challenge and try to come up with an answer. While I am <em>definitely not</em> the most authoritative source for standards works, I have landed a few minor changes in various W3C specs. With that out of the way, let me guide you through <strong><em>my personal approach</em></strong> to potentially landing a feature request like “correct” title case support.</p>
 <h4 id="understanding-the-status-quo-of-existing-features">Understanding the Status Quo of Existing Features <a class="direct-link" href="#understanding-the-status-quo-of-existing-features" aria-hidden="true">#</a></h4>
 <p>There is a clear use case (“correct” title capitalization) and an existing CSS feature (<code>text-transform</code>) that somewhat does the desired thing, but not exactly. Now where to go from here as someone who self-identifies as “most web developers” and who is new to standards?</p>
 <blockquote>
