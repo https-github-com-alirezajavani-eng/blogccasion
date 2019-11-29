@@ -4738,6 +4738,8 @@ and the &lt;a href=&quot;https://github.com/edwardtufte/tufte-css&quot;&gt;Tufte
 &lt;li&gt;Some of the CSS is based on Mozilla&#39;s &lt;a href=&quot;https://github.com/mozdevs/cssremedy&quot;&gt;CSS Remedy&lt;/a&gt; project.&lt;/li&gt;
 &lt;li&gt;Last not least, the &lt;em&gt;Valid HTML5&lt;/em&gt; badge is inspired by &lt;a href=&quot;https://bradleytaunt.com/&quot;&gt;Bradley Taunt&lt;/a&gt;&#39;s
 article &lt;a href=&quot;https://bradleytaunt.com/html5-validator-badge/&quot;&gt;Using HTML Validator Badges Again&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;The &lt;em&gt;Synthwave &#39;84&lt;/em&gt; code theme for Visual Studio Code originally is from &lt;a href=&quot;https://twitter.com/Robb0wen&quot;&gt;Robb Owen&lt;/a&gt;.
+I&#39;m using the port for &lt;a href=&quot;https://prismjs.com/&quot;&gt;PrismJS&lt;/a&gt; by &lt;a href=&quot;https://twitter.com/themarcba&quot;&gt;Marc Backes&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;🙏 Thanks everyone for letting me stand on your shoulders!&lt;/p&gt;
 &lt;p&gt;There&#39;re still some rough edges, so if you encounter a problem, please report an
