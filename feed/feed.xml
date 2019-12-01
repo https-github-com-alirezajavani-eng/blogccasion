@@ -4799,7 +4799,7 @@ The &lt;a href=&quot;https://glitch.com/~animated-svg-favicon&quot;&gt;Glitch&lt
 My recommendation would be to stick with CSS animations whenever you can,
 since it&#39;s the most compatible and future-proof variant.&lt;/p&gt;
 &lt;div class=&quot;glitch-embed-wrap&quot; style=&quot;height: 420px; width: 100%;&quot;&gt;
-  &lt;iframe src=&quot;https://glitch.com/embed/#!/embed/animated-svg-favicon?path=icon_js.svg&amp;previewSize=100&quot; title=&quot;animated-svg-favicon on Glitch&quot; allow=&quot;geolocation; microphone; camera; midi; vr; encrypted-media&quot; style=&quot;height: 100%; width: 100%; border: 0;&quot;&gt;
+  &lt;iframe src=&quot;https://glitch.com/embed/#!/embed/animated-svg-favicon?path=icon_js.svg&amp;previewSize=100&quot; title=&quot;animated-svg-favicon on Glitch&quot; allow=&quot;geolocation; microphone; camera; midi; vr; encrypted-media&quot; style=&quot;height: 100%; width: 100%; border: 0;&quot; loading=&quot;lazy&quot;&gt;
   &lt;/iframe&gt;
 &lt;/div&gt;
 &lt;h2 id=&quot;using-animated-svgs-as-favicons&quot;&gt;Using Animated SVGs as Favicons &lt;a class=&quot;direct-link&quot; href=&quot;#using-animated-svgs-as-favicons&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
