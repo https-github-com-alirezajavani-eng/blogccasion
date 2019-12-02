@@ -8,7 +8,7 @@
   "background-color": "#000",
   "icons": [
     {
-      "src": "/static/maskable_icon.png",
+      "src": "/static/maskable-icon.png",
       "sizes": "360x360",
       "type": "image/png",
       "purpose": "maskable any"
