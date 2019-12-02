@@ -948,16 +948,6 @@
   </url>
   
   <url>
-    <loc>https://blog.tomayac.com/blogccasion/tags/Technical/</loc>
-    <lastmod>2019-12-02</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.tomayac.com/blogccasion/tags/France/</loc>
-    <lastmod>2019-12-02</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.tomayac.com/blogccasion/tags/Work/</loc>
     <lastmod>2019-12-02</lastmod>
   </url>
@@ -968,7 +958,17 @@
   </url>
   
   <url>
+    <loc>https://blog.tomayac.com/blogccasion/tags/Technical/</loc>
+    <lastmod>2019-12-02</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.tomayac.com/blogccasion/tags/Political/</loc>
+    <lastmod>2019-12-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.tomayac.com/blogccasion/tags/France/</loc>
     <lastmod>2019-12-02</lastmod>
   </url>
 </urlset>
